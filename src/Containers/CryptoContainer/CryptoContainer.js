@@ -11,11 +11,9 @@ class CryptoContainer extends Component {
       const percentChange = crypto[timeFrame].price_change_pct;
       return (
         <CryptoCard 
-          rank={crypto.rank} 
           price={crypto.price} 
           percentChange={percentChange}
           name={crypto.name} 
-          logo={crypto.logo_url}
           key={crypto.id}
         />
       );
