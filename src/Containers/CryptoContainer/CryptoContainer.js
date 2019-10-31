@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CryptoCard from '../../Components/CryptoCard/CryptoCard';
-
+import './CryptoContainer.scss';
 
 class CryptoContainer extends Component {
 
@@ -11,11 +11,9 @@ class CryptoContainer extends Component {
       const percentChange = crypto[timeFrame].price_change_pct;
       return (
         <CryptoCard 
-          rank={crypto.rank} 
           price={crypto.price} 
           percentChange={percentChange}
           name={crypto.name} 
-          logo={crypto.logo_url}
           key={crypto.id}
         />
       );
@@ -24,7 +22,7 @@ class CryptoContainer extends Component {
 
   render() {
     return (
-      <section>
+      <section id='crypto-container'>
         {this.renderCryptos()}
       </section>
     );

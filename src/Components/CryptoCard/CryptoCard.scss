@@ -1,0 +1,27 @@
+h4 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+img {
+  width: 34px;
+}
+
+.crypto-card {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3e3e3ed4;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
