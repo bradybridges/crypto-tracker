@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CryptoCard from '../../Components/CryptoCard/CryptoCard';
-
+import './CryptoContainer.scss';
 
 class CryptoContainer extends Component {
 
@@ -24,7 +24,7 @@ class CryptoContainer extends Component {
 
   render() {
     return (
-      <section>
+      <section id='crypto-container'>
         {this.renderCryptos()}
       </section>
     );

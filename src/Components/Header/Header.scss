@@ -1,0 +1,16 @@
+$background-color: black;
+
+header {
+  height: 20vh;
+  background-color: $background-color;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 3em;
+  letter-spacing: 5px;
+}
