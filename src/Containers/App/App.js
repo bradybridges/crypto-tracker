@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { updateCryptos, updateError } from '../../Actions/';
 import Header from '../../Components/Header/Header';
 import CryptoContainer from '../../Containers/CryptoContainer/CryptoContainer';
+import Nav from '../../Components/Nav/Nav';
+import './App.scss';
 
 export class App extends Component {
 
@@ -39,6 +41,9 @@ export class App extends Component {
         <Route to='/'>
           {this.props.error === '' && <CryptoContainer />}
         </Route>
+        <nav>
+          <Nav />
+        </nav>
       </main>
     );
   }
