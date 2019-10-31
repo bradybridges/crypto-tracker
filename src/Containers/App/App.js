@@ -21,7 +21,14 @@ export class App extends Component {
     });
   }//should be called at in intervals to update info periodically
 
+  handleCryptoRefresh = () => {
+    setInterval(() => {
+      this.getCryptos();
+    }, 60000);
+  }
+
   render() {
+    // this.handleCryptoRefresh(); //uncomment for 60 sec refresh of data
     return (
       <h1>Welcome to crypto tracker</h1>
     );
