@@ -1,0 +1,57 @@
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import { fetchTopCryptos } from '../../apiCalls';
+import { connect } from 'react-redux';
+import { updateCryptos, updateError } from '../../Actions/';
+import Header from '../../Components/Header/Header';
+import CryptoContainer from '../../Containers/CryptoContainer/CryptoContainer';
+
+export class App extends Component {
+
+  componentDidMount = () => {
+    this.getCryptos();
+  }
+
+  getCryptos = () => {
+    fetchTopCryptos()
+    .then(cryptos => {
+      console.log(cryptos);
+      this.props.updateCryptos(cryptos);
+    })
+    .catch(error => {
+      console.log(error.message)
+      this.props.updateError(error.message);
+    });
+  }
+
+  handleCryptoRefresh = () => {
+    setInterval(() => {
+      this.getCryptos();
+    }, 60000);
+  }
+
+  render() {
+    // this.handleCryptoRefresh(); //uncomment for 60 sec refresh of data
+    return (
+      <main>
+        <Header />
+        {this.props.error !== '' && <h4>{this.props.error}</h4>}
+        <Route to='/'>
+          {this.props.error === '' && <CryptoContainer />}
+        </Route>
+      </main>
+    );
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  updateCryptos: cryptos => dispatch( updateCryptos(cryptos) ),
+  updateError: error => dispatch( updateError(error) ),
+});
+
+const mapStateToProps = state => ({
+  cryptos: state.cryptos,
+  error: state.error,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
