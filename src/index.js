@@ -6,10 +6,12 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import {composeWithDevTools } from 'redux-devtools-extension';
 import { rootReducer } from './Reducers/index';
+import { HashRouter } from 'react-router-dom';
+
 const store = createStore(rootReducer, composeWithDevTools());
 const Application = (
   <Provider store={store}>
-    <App />
+    <HashRouter><App /></HashRouter>
   </Provider>
 );
 ReactDOM.render(Application, document.getElementById('root'));

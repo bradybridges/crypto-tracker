@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import { fetchTopCryptos } from '../../apiCalls';
 import { connect } from 'react-redux';
 import { updateCryptos, updateError } from '../../Actions/';
@@ -34,7 +35,10 @@ export class App extends Component {
     return (
       <main>
         <Header />
-        <CryptoContainer />
+        {this.props.error !== '' && <h4>{this.props.error}</h4>}
+        <Route to='/'>
+          {this.props.error === '' && <CryptoContainer />}
+        </Route>
       </main>
     );
   }
@@ -47,6 +51,7 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => ({
   cryptos: state.cryptos,
+  error: state.error,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
