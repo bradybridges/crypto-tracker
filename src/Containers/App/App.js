@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { fetchTopCryptos } from '../../apiCalls';
 import { connect } from 'react-redux';
 import { updateCryptos, updateError } from '../../Actions/';
+import Header from '../../Components/Header/Header';
+import CryptoContainer from '../../Containers/CryptoContainer/CryptoContainer';
 
 export class App extends Component {
 
@@ -19,7 +21,7 @@ export class App extends Component {
       console.log(error.message)
       this.props.updateError(error.message);
     });
-  }//should be called at in intervals to update info periodically
+  }
 
   handleCryptoRefresh = () => {
     setInterval(() => {
@@ -30,7 +32,10 @@ export class App extends Component {
   render() {
     // this.handleCryptoRefresh(); //uncomment for 60 sec refresh of data
     return (
-      <h1>Welcome to crypto tracker</h1>
+      <main>
+        <Header />
+        <CryptoContainer />
+      </main>
     );
   }
 }

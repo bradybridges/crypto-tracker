@@ -7,3 +7,8 @@ export const updateError = error => ({
   type: 'UPDATE_ERROR',
   error,
 });
+
+export const updateTimeFrame = timeFrame => ({
+  type: 'UPDATE_TIME_FRAME',
+  timeFrame,
+})
