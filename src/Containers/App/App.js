@@ -39,7 +39,6 @@ export class App extends Component {
       <main>
         <Header />
         <CryptoContainer />
-        <SearchCoins />
         <nav>
           <Nav />
         </nav>
