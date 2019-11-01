@@ -11,10 +11,10 @@ const Nav = () => {
       <NavLink className='nav-button' to='/'>
         <img src={homeImg} alt='home button' />
       </NavLink>
-      <NavLink className='nav-button' to='/'>
+      <NavLink className='nav-button' to='/portfolio'>
         <img src={portfolioImg} alt='portfolio button' />
       </NavLink>
-      <NavLink to='/hello' className='nav-button'>
+      <NavLink to='/search' className='nav-button'>
         <img src={searchImg} alt='search button' />
       </NavLink>
     </>
