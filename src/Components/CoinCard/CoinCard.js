@@ -21,7 +21,7 @@ class CoinCard extends Component {
     this.props.updateCryptos(updatedCryptos);
     const updatedSymbols = updatedCryptos.map( coin => coin.id);
     this.props.updateTrackedCoins(updatedSymbols);
-    localStorage.setItem('trackedCoins', updatedSymbols);
+    localStorage.setItem('trackedCoins', JSON.stringify(updatedSymbols));
   }
 
   render() {
