@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { fetchTopCryptos } from '../../apiCalls';
 import { connect } from 'react-redux';
-import { updateCryptos, updateError } from '../../Actions/';
+import { updateCryptos, updateError, updateTrackedCoins } from '../../Actions/';
 import Header from '../../Components/Header/Header';
 import CryptoContainer from '../../Containers/CryptoContainer/CryptoContainer';
 import Nav from '../../Components/Nav/Nav';
@@ -13,17 +13,21 @@ import './App.scss';
 export class App extends Component {
 
   componentDidMount = () => {
-    this.getCryptos();
+    const localTrackedCoins = JSON.parse(localStorage.getItem('trackedCoins'));
+    if(localTrackedCoins) {
+      this.props.updateTrackedCoins(localTrackedCoins);
+      this.getCryptos(localTrackedCoins);
+    } else {
+      this.getCryptos(this.props.trackedCoins);
+    }
   }
 
-  getCryptos = () => {
-    fetchTopCryptos()
+  getCryptos = symbols => {
+    fetchTopCryptos(symbols)
     .then(cryptos => {
-      console.log(cryptos);
       this.props.updateCryptos(cryptos);
     })
     .catch(error => {
-      console.log(error.message)
       this.props.updateError(error.message);
     });
   }
@@ -40,8 +44,13 @@ export class App extends Component {
       <main>
         <Header />
         <Route exact path='/' component={CryptoContainer} />
-        <Route path='/search' component={SearchCoins} />
+        <Route path='/search' render={() => <SearchCoins getCryptos={this.getCryptos} />} />
         <Route path='/portfolio' component={Portfolio} />
+        <Route path='/coins/:name' render={({ match }) => {
+	        const { name } = match.params
+	        const coin = this.props.cryptos.find(coin => coin.name === name);
+          return coin && <h2>test</h2>
+        }} />
         <nav>
           <Nav />
         </nav>
@@ -54,11 +63,13 @@ export class App extends Component {
 const mapDispatchToProps = dispatch => ({
   updateCryptos: cryptos => dispatch( updateCryptos(cryptos) ),
   updateError: error => dispatch( updateError(error) ),
+  updateTrackedCoins: coins => dispatch( updateTrackedCoins(coins) ),
 });
 
 const mapStateToProps = state => ({
   cryptos: state.cryptos,
   error: state.error,
+  trackedCoins: state.trackedCoins,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
