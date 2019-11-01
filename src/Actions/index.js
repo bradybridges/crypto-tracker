@@ -12,3 +12,8 @@ export const updateTimeFrame = timeFrame => ({
   type: 'UPDATE_TIME_FRAME',
   timeFrame,
 })
+
+export const updateTrackedCoins = symbols => ({
+  type: 'UPDATE_TRACKED_COINS',
+  symbols,
+});

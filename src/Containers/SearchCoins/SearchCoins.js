@@ -23,11 +23,9 @@ class SearchCoins extends Component {
     const symbol = this.state.symbol;
     const coin = await searchCoin(symbol);
     if(coin.length === 0) {
-      console.log('coin not found');
       this.setState({symbol: '', coin: {error: 'Coin Not Found'}});
     } else {
       this.setState({coin: coin[0]});
-      console.log(coin[0]);
       this.setState({symbol: ''});
     }
   }
@@ -43,7 +41,7 @@ class SearchCoins extends Component {
             <img src={searchImg} alt='search button' />
           </div>
         </form>
-        {this.state.coin.name && <CoinCard name={name} rank={rank} price={price} logo={logo_url} circulatingSupply={circulating_supply} />}
+        {this.state.coin.name && <CoinCard  getCryptos={this.props.getCryptos} coin={this.state.coin} name={name} rank={rank} price={price} logo={logo_url} circulatingSupply={circulating_supply} />}
         {this.state.coin.error && <h3>Coin Not Found</h3>}
       </section>
     );
