@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CryptoCard from '../../Components/CryptoCard/CryptoCard';
 import './CryptoContainer.scss';
+import { withRouter } from 'react-router-dom';
 
 class CryptoContainer extends Component {
 
@@ -34,4 +35,4 @@ const mapStateToProps = state => ({
   timeFrame: state.timeFrame,
 })
 
-export default connect(mapStateToProps)(CryptoContainer);
+export default withRouter(connect(mapStateToProps)(CryptoContainer));

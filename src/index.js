@@ -10,12 +10,14 @@ import { HashRouter } from 'react-router-dom';
 import './index.scss';
 
 const store = createStore(rootReducer, composeWithDevTools());
-const Application = (
+
+ReactDOM.render(
   <Provider store={store}>
-    <HashRouter><App /></HashRouter>
+    <HashRouter>
+      <App />
+    </HashRouter>
   </Provider>
-);
-ReactDOM.render(Application, document.getElementById('root'));
+  , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

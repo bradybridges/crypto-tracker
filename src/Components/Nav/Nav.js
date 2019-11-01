@@ -14,7 +14,7 @@ const Nav = () => {
       <NavLink className='nav-button' to='/'>
         <img src={portfolioImg} alt='portfolio button' />
       </NavLink>
-      <NavLink className='nav-button' to='/'>
+      <NavLink to='/hello' className='nav-button'>
         <img src={searchImg} alt='search button' />
       </NavLink>
     </>

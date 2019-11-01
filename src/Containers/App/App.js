@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { fetchTopCryptos } from '../../apiCalls';
 import { connect } from 'react-redux';
 import { updateCryptos, updateError } from '../../Actions/';
 import Header from '../../Components/Header/Header';
 import CryptoContainer from '../../Containers/CryptoContainer/CryptoContainer';
 import Nav from '../../Components/Nav/Nav';
+import SearchCoins from '../SearchCoins/SearchCoins';
 import './App.scss';
 
 export class App extends Component {
@@ -37,14 +38,13 @@ export class App extends Component {
     return (
       <main>
         <Header />
-        {this.props.error !== '' && <h4>{this.props.error}</h4>}
-        <Route to='/'>
-          {this.props.error === '' && <CryptoContainer />}
-        </Route>
+        <CryptoContainer />
+        <SearchCoins />
         <nav>
           <Nav />
         </nav>
       </main>
+      
     );
   }
 }
