@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { fetchTopCryptos } from '../../apiCalls';
 import { connect } from 'react-redux';
 import { updateCryptos, updateError } from '../../Actions/';
@@ -19,11 +19,9 @@ export class App extends Component {
   getCryptos = () => {
     fetchTopCryptos()
     .then(cryptos => {
-      console.log(cryptos);
       this.props.updateCryptos(cryptos);
     })
     .catch(error => {
-      console.log(error.message)
       this.props.updateError(error.message);
     });
   }
@@ -42,6 +40,11 @@ export class App extends Component {
         <Route exact path='/' component={CryptoContainer} />
         <Route path='/search' component={SearchCoins} />
         <Route path='/portfolio' component={Portfolio} />
+        <Route path='/coins/:name' render={({ match }) => {
+	        const { name } = match.params
+	        const coin = this.props.cryptos.find(coin => coin.name === name);
+          return coin && <h2>test</h2>
+        }} />
         <nav>
           <Nav />
         </nav>

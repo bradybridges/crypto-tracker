@@ -33,14 +33,17 @@ class SearchCoins extends Component {
   }
 
   render() {
-    const {rank, logo_url, price, name, error} = this.state.coin;
+    const {rank, logo_url, price, name, circulating_supply} = this.state.coin;
     return(
-      <section>
+      <section id='search-coins-container'>
         <form onSubmit={this.handleCoinSearch}>
+          <h2 id='search-header'>Search For Coins By Symbol</h2>
           <input name='symbol' type='text' maxLength='3' placeholder='Ex BTC' value={this.state.symbol} onChange={this.handleChange} />
-          <img src={searchImg} alt='search button' />
+          <div id='search-button-div'>
+            <img src={searchImg} alt='search button' />
+          </div>
         </form>
-        {this.state.coin.name && <CoinCard name={name} rank={rank} price={price} logo={logo_url} />}
+        {this.state.coin.name && <CoinCard name={name} rank={rank} price={price} logo={logo_url} circulatingSupply={circulating_supply} />}
         {this.state.coin.error && <h3>Coin Not Found</h3>}
       </section>
     );
