@@ -7,6 +7,7 @@ import Header from '../../Components/Header/Header';
 import CryptoContainer from '../../Containers/CryptoContainer/CryptoContainer';
 import Nav from '../../Components/Nav/Nav';
 import SearchCoins from '../SearchCoins/SearchCoins';
+import Portfolio from '../../Containers/Portfolio/Portfolio';
 import './App.scss';
 
 export class App extends Component {
@@ -38,7 +39,9 @@ export class App extends Component {
     return (
       <main>
         <Header />
-        <CryptoContainer />
+        <Route exact path='/' component={CryptoContainer} />
+        <Route path='/search' component={SearchCoins} />
+        <Route path='/portfolio' component={Portfolio} />
         <nav>
           <Nav />
         </nav>
