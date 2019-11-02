@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { fetchTopCryptos } from '../../apiCalls';
 import { connect } from 'react-redux';
-import { updateCryptos, updateError, updateTrackedCoins } from '../../Actions/';
+import { updateCryptos, updateError, updateTrackedCoins, updatePortfolio } from '../../Actions/';
 import Header from '../../Components/Header/Header';
 import CryptoContainer from '../../Containers/CryptoContainer/CryptoContainer';
 import Nav from '../../Components/Nav/Nav';
@@ -17,8 +17,17 @@ export class App extends Component {
     if(localTrackedCoins) {
       this.props.updateTrackedCoins(localTrackedCoins);
       this.getCryptos(localTrackedCoins);
+      this.loadPortfolio();
     } else {
       this.getCryptos(this.props.trackedCoins);
+    }
+  }
+
+  loadPortfolio = () => {
+    const localPortfolio = JSON.parse(localStorage.getItem('portfolio'));
+
+    if(localPortfolio) {
+      this.props.updatePortfolio(localPortfolio);
     }
   }
 
@@ -64,6 +73,7 @@ const mapDispatchToProps = dispatch => ({
   updateCryptos: cryptos => dispatch( updateCryptos(cryptos) ),
   updateError: error => dispatch( updateError(error) ),
   updateTrackedCoins: coins => dispatch( updateTrackedCoins(coins) ),
+  updatePortfolio: portfolio => dispatch( updatePortfolio(portfolio) ),
 });
 
 const mapStateToProps = state => ({
