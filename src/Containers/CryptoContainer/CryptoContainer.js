@@ -9,7 +9,13 @@ class CryptoContainer extends Component {
   renderCryptos = () => {
     return this.props.cryptos.map(crypto => {
       const timeFrame = this.props.timeFrame;
-      const percentChange = crypto[timeFrame].price_change_pct;
+      let percentChange;
+      if(crypto[timeFrame]) {
+        percentChange = crypto[timeFrame].price_change_pct;
+      } else {
+        percentChange = crypto['365d'].price_change_pct;
+      }
+
       return (
         <CryptoCard 
           price={crypto.price} 
