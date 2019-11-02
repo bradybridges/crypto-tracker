@@ -8,6 +8,7 @@ import CryptoContainer from '../../Containers/CryptoContainer/CryptoContainer';
 import Nav from '../../Components/Nav/Nav';
 import SearchCoins from '../SearchCoins/SearchCoins';
 import Portfolio from '../../Containers/Portfolio/Portfolio';
+import CoinInfo from '../../Components/CoinInfo/CoinInfo';
 import './App.scss';
 
 export class App extends Component {
@@ -56,9 +57,9 @@ export class App extends Component {
         <Route path='/search' render={() => <SearchCoins getCryptos={this.getCryptos} />} />
         <Route path='/portfolio' component={Portfolio} />
         <Route path='/coins/:name' render={({ match }) => {
-	        const { name } = match.params
+	        const { name } = match.params;
 	        const coin = this.props.cryptos.find(coin => coin.name === name);
-          return coin && <h2>test</h2>
+          return coin && <CoinInfo coin={coin} />;
         }} />
         <nav>
           <Nav />
