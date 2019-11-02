@@ -17,3 +17,8 @@ export const updateTrackedCoins = symbols => ({
   type: 'UPDATE_TRACKED_COINS',
   symbols,
 });
+
+export const updatePortfolio = portfolio => ({
+  type: 'UPDATE_PORTFOLIO',
+  portfolio,
+});
