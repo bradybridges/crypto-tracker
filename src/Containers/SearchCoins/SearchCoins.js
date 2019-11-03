@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './SearchCoins.scss';
 import searchImg from '../../Images/search.svg';
 import { searchCoin } from '../../apiCalls';
-import CoinCard  from '../../Components/CoinCard/CoinCard';
+import CoinCard  from '../CoinCard/CoinCard';
 
 class SearchCoins extends Component {
   constructor() {

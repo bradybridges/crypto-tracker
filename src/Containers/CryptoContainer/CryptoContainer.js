@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CryptoCard from '../CryptoCard/CryptoCard';
+import TimeFrameBar from '../TimeFrameBar/TimeFrameBar';
 import './CryptoContainer.scss';
-import { withRouter } from 'react-router-dom';
-
 export class CryptoContainer extends Component {
 
   renderCryptos = () => {
@@ -30,6 +29,7 @@ export class CryptoContainer extends Component {
   render() {
     return (
       <section id='crypto-container'>
+        <TimeFrameBar />
         {this.renderCryptos()}
       </section>
     );

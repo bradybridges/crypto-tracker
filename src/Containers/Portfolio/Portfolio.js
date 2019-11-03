@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updatePortfolio } from '../../Actions/index';
-import QuantityInput from '../../Components/QuantityInput/QuantityInput';
+import QuantityInput from '../QuantityInput/QuantityInput';
 import './Portfolio.scss';
 
 export class Portfolio extends Component {
