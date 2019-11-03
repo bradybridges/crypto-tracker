@@ -70,14 +70,14 @@ export class App extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   updateCryptos: cryptos => dispatch( updateCryptos(cryptos) ),
   updateError: error => dispatch( updateError(error) ),
   updateTrackedCoins: coins => dispatch( updateTrackedCoins(coins) ),
   updatePortfolio: portfolio => dispatch( updatePortfolio(portfolio) ),
 });
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   cryptos: state.cryptos,
   error: state.error,
   trackedCoins: state.trackedCoins,
