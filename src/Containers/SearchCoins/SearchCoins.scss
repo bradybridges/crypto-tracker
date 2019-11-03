@@ -16,6 +16,9 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url('../../Images/30\ Black\ abstract\ Wallpapers\ HD\ Download.jpg');
+  color: white;
+  justify-content: space-evenly;
 }
 
 #search-button-div {
@@ -25,4 +28,16 @@ input {
   border-radius: 4px;
   display: flex;
   justify-content: center;
+  width: 300px;
+  height: 70px;
+  border: solid white 1px;
+}
+
+#search-form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 30vh;
 }

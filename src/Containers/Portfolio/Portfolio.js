@@ -19,8 +19,9 @@ export class Portfolio extends Component {
   render() {
     return (
       <section id='portfolio-container'>
+        <h2>Portfolio</h2>
         {this.renderInputs()}
-        <button>View Value</button>
+        <button id='view-value-btn'>View Value</button>
       </section>
     );
   }
