@@ -23,6 +23,7 @@ class SearchCoins extends Component {
     const symbol = this.state.symbol;
     const coin = await searchCoin(symbol);
     if(coin.length === 0) {
+      console.log(coin[0]);
       this.setState({symbol: '', coin: {error: 'Coin Not Found'}});
     } else {
       this.setState({coin: coin[0]});

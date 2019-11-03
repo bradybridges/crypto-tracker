@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { updatePortfolio } from '../../Actions/index';
 import './QuantityInput.scss';
 
-class QuantityInput extends Component {
+export class QuantityInput extends Component {
   constructor() {
     super();
     
@@ -13,7 +13,7 @@ class QuantityInput extends Component {
     }
   }
 
-  handleChange = (e) => {
+    handleChange = (e) => {
     const qty = Number(e.target.value);
     const name = this.props.coin.name;
     const indexExistingCoin = this.props.portfolio.findIndex( coin => coin.name === name);
@@ -49,11 +49,11 @@ class QuantityInput extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   updatePortfolio: portfolio => dispatch( updatePortfolio(portfolio) ),
 });
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   portfolio: state.portfolio,
 });
 

@@ -4,7 +4,7 @@ import { updatePortfolio } from '../../Actions/index';
 import QuantityInput from '../../Components/QuantityInput/QuantityInput';
 import './Portfolio.scss';
 
-class Portfolio extends Component {
+export class Portfolio extends Component {
   renderInputs = () => {
     const coinInputs = this.props.cryptos.map( coin => {
       const existingCoin = this.props.portfolio.find( crypto => crypto.name === coin.name);
@@ -26,12 +26,12 @@ class Portfolio extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   cryptos: state.cryptos,
   portfolio: state.portfolio,
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   updatePortfolio: portfolio => dispatch( updatePortfolio(portfolio) ),
 });
 

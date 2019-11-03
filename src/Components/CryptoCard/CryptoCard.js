@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import './CryptoCard.scss';
 
-const CryptoCard = (props) => {
+export const CryptoCard = (props) => {
   const price = Number(props.price).toFixed(2);
   const percentChange = (Number(props.percentChange) * 100).toFixed(2);
   const arrowSrc = Number(props.percentChange) < 0 ? downArrow : upArrow;
@@ -20,7 +20,7 @@ const CryptoCard = (props) => {
     </NavLink>
   );
 }
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   timeFrame: state.timeFrame,
 });
 

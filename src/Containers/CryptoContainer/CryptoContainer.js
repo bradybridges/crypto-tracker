@@ -4,7 +4,7 @@ import CryptoCard from '../../Components/CryptoCard/CryptoCard';
 import './CryptoContainer.scss';
 import { withRouter } from 'react-router-dom';
 
-class CryptoContainer extends Component {
+export class CryptoContainer extends Component {
 
   renderCryptos = () => {
     return this.props.cryptos.map(crypto => {
@@ -36,7 +36,7 @@ class CryptoContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   cryptos: state.cryptos,
   timeFrame: state.timeFrame,
 })
