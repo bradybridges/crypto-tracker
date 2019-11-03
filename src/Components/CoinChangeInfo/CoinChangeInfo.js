@@ -40,12 +40,3 @@ const CoinChangeInfo = ({data, timeFrame}) => {
 }
 
 export default CoinChangeInfo;
-
-// price_change(pin):"-12.28743296"
-// price_change_pct(pin):"-0.00132892"
-// volume(pin):"475886050.61"
-// volume_change(pin):"-42733991.88"
-// volume_change_pct(pin):"-0.08"
-// market_cap_change(pin):"-221018977.59"
-// market_cap_change_pct(pin):"-0.00"
-// volume_transparency_grade(pin):"A"
