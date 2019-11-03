@@ -42,8 +42,8 @@ export class QuantityInput extends Component {
     const { coin } = this.props;
     return (
       <div className='coin-input-div'>
-        <label>{coin.name}</label>
-        <input type='number' placeholder={`Quantity: (${this.props.qty})`} onChange={this.handleChange} value={this.state.qty} />
+        <label className='coin-label'>{coin.name}</label>
+        <input className='qty-input' type='number' placeholder={`Quantity: (${this.props.qty})`} onChange={this.handleChange} value={this.state.qty} />
       </div>
     );
   }

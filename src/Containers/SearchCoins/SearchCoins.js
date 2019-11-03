@@ -35,7 +35,7 @@ class SearchCoins extends Component {
     const {rank, logo_url, price, name, circulating_supply} = this.state.coin;
     return(
       <section id='search-coins-container'>
-        <form onSubmit={this.handleCoinSearch}>
+        <form id='search-form' onSubmit={this.handleCoinSearch}>
           <h2 id='search-header'>Search For Coins By Symbol</h2>
           <input name='symbol' type='text' maxLength='3' placeholder='Ex BTC' value={this.state.symbol} onChange={this.handleChange} />
           <div id='search-button-div'>

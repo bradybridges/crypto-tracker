@@ -1,0 +1,26 @@
+p {
+  width: 90%;
+  text-align: center;
+}
+
+#coin-info-container {
+  background-image: url('../../Images/30\ Black\ abstract\ Wallpapers\ HD\ Download.jpg');
+  height: 70vh;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+#coin-title-div {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+#back-button-home {
+  position: absolute;
+  top: 22vh;
+  left: 20px;
+}
