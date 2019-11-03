@@ -3,7 +3,7 @@ import './CoinCard.scss';
 import { connect } from 'react-redux';
 import { updateTrackedCoins, updateCryptos } from '../../Actions/index';
 
-class CoinCard extends Component {
+export class CoinCard extends Component {
 
   trackCoin = (e) => {
     e.preventDefault();
@@ -50,12 +50,12 @@ class CoinCard extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   updateTrackedCoins: symbols => dispatch( updateTrackedCoins(symbols) ),
   updateCryptos: coins => dispatch( updateCryptos(coins) ),
 });
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   trackedCoins: state.trackedCoins,
   cryptos: state.cryptos,
 });
