@@ -1,0 +1,23 @@
+#portfolio-info-container {
+  position: absolute;
+  width: 90%;
+  background-color: blue;
+  height: 68vh;
+  border-radius: 4px;
+  overflow: scroll;
+}
+
+#total-p {
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  width: 100%;
+}
+
+.coin-value-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

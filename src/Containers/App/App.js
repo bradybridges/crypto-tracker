@@ -4,11 +4,11 @@ import { fetchTopCryptos } from '../../apiCalls';
 import { connect } from 'react-redux';
 import { updateCryptos, updateError, updateTrackedCoins, updatePortfolio } from '../../Actions/';
 import Header from '../../Components/Header/Header';
-import CryptoContainer from '../../Containers/CryptoContainer/CryptoContainer';
+import CryptoContainer from '../CryptoContainer/CryptoContainer';
 import Nav from '../../Components/Nav/Nav';
 import SearchCoins from '../SearchCoins/SearchCoins';
-import Portfolio from '../../Containers/Portfolio/Portfolio';
-import CoinInfo from '../../Components/CoinInfo/CoinInfo';
+import Portfolio from '../Portfolio/Portfolio';
+import CoinInfo from '../CoinInfo/CoinInfo';
 import './App.scss';
 
 export class App extends Component {

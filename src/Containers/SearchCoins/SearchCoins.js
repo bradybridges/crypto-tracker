@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './SearchCoins.scss';
 import searchImg from '../../Images/search.svg';
 import { searchCoin } from '../../apiCalls';
-import CoinCard  from '../../Components/CoinCard/CoinCard';
+import CoinCard  from '../CoinCard/CoinCard';
 
 class SearchCoins extends Component {
   constructor() {
@@ -37,7 +37,7 @@ class SearchCoins extends Component {
       <section id='search-coins-container'>
         <form id='search-form' onSubmit={this.handleCoinSearch}>
           <h2 id='search-header'>Search For Coins By Symbol</h2>
-          <input name='symbol' type='text' maxLength='3' placeholder='Ex BTC' value={this.state.symbol} onChange={this.handleChange} />
+          <input name='symbol' type='text' maxLength='4' placeholder='Ex BTC' value={this.state.symbol} onChange={this.handleChange} />
           <div id='search-button-div'>
             <img src={searchImg} alt='search button' />
           </div>

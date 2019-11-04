@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CryptoCard should match the snapshot 1`] = `
+<NavLink
+  to="/coins/Bitcoin"
+>
+  <section
+    className="crypto-card"
+  >
+    <h4>
+      Bitcoin
+    </h4>
+    <p>
+      $
+      1001.83
+    </p>
+    <p>
+      %
+      -13.45
+    </p>
+    <img
+      alt="percent change indicator"
+      src="down-arrow.png"
+    />
+  </section>
+</NavLink>
+`;

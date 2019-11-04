@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CoinInfo should match the snapshot 1`] = `
+<section
+  id="coin-info-container"
+>
+  <NavLink
+    id="back-button-home"
+    to="/"
+  >
+    <img
+      alt="back button"
+      src="left-arrow.svg"
+    />
+  </NavLink>
+  <div
+    id="coin-title-div"
+  >
+    <h2>
+      Bitcoin
+    </h2>
+    <img
+      alt="coin logo"
+      src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg"
+    />
+  </div>
+  <p>
+    Rank: #
+    1
+  </p>
+  <p>
+    Symbol: 
+    BTC
+  </p>
+  <p>
+    Price: $
+    9393.23
+  </p>
+  <p>
+    Market Cap: $
+    234453454.34
+  </p>
+  <p>
+    High: $
+    19567.43
+  </p>
+  <p>
+    Circulating Supply: 
+    12314534
+  </p>
+  <p>
+    Max Supply: 
+    200000000
+  </p>
+  <CoinChangeInfo
+    data={
+      Object {
+        "price_change": "231.34",
+      }
+    }
+    timeFrame="1d"
+  />
+</section>
+`;

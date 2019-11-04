@@ -1,3 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CoinChangeInfo should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`CoinChangeInfo should match the snapshot 1`] = `
+<section
+  id="coin-change-info-container"
+>
+  <h2>
+    Change in 
+    1d
+  </h2>
+  <div
+    className="info-container"
+  >
+    <p>
+      Price
+    </p>
+    <p>
+      $
+      300.05
+    </p>
+    <p>
+      %
+      423.00
+    </p>
+    <img
+      alt="price indicator"
+      src="up-arrow.png"
+    />
+  </div>
+  <div
+    className="info-container"
+  >
+    <p>
+      Volume
+    </p>
+    <p>
+      10000.00
+    </p>
+    <p>
+      %
+      1030.00
+    </p>
+    <img
+      alt="volume indicator"
+      src="up-arrow.png"
+    />
+  </div>
+  <div
+    className="info-container"
+  >
+    <p>
+      Market Cap
+    </p>
+    <p>
+      $
+      -425232.00
+    </p>
+    <p>
+      $
+      -110.00
+    </p>
+    <img
+      alt="market indicator"
+      src="down-arrow.png"
+    />
+  </div>
+</section>
+`;

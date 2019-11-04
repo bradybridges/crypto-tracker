@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimeFrameBar should match the snapshot 1`] = `
+<table
+  id="time-frame-table"
+>
+  <tbody>
+    <tr>
+      <td
+        className=""
+        id="1h"
+        onClick={[Function]}
+      >
+        1HR
+      </td>
+      <td
+        className=""
+        id="1d"
+        onClick={[Function]}
+      >
+        1D
+      </td>
+      <td
+        className=""
+        id="30d"
+        onClick={[Function]}
+      >
+        30D
+      </td>
+      <td
+        className=""
+        id="365d"
+        onClick={[Function]}
+      >
+        1YR
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

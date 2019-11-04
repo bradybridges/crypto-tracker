@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import CoinChangeInfo from '../CoinChangeInfo/CoinChangeInfo';
+import CoinChangeInfo from '../../Components/CoinChangeInfo/CoinChangeInfo';
 import { connect } from 'react-redux';
 import './CoinInfo.scss';
 import backButton from '../../Images/left-arrow.svg';
