@@ -42,8 +42,8 @@ describe('QuantityInput', () => {
     };
     wrapper.instance().handleChange(mockEvent);
     expect(wrapper.state('name')).toEqual('');
-    expect(wrapper.state('qty')).toEqual('');
-    expect(wrapper.instance().updatePortfolio).not.toHaveBeenCalled();
+    expect(wrapper.state('qty')).toEqual(0);
+    expect(wrapper.instance().updatePortfolio).toHaveBeenCalledWith('Bitcoin', 0, 0);
   });
 
   it('updatePortfolio should update coin if it already exists', () => {
@@ -56,6 +56,15 @@ describe('QuantityInput', () => {
     const expectedPortfolio = [{name: "Bitcoin", qty: 1}, {name: "Litecoin", qty: 0}, {name: 'Ripple', qty: 3}];
     wrapper.instance().updatePortfolio('Ripple', 3, -1);
     expect(wrapper.instance().props.updatePortfolio).toHaveBeenCalledWith(expectedPortfolio);
+  });
+
+  it.skip('when quantity input changes handleChange should be called', () => {
+    const mockEvent = {
+      target: {value: '10'}
+    };
+    wrapper.instance().handleChange = jest.fn();
+    wrapper.find('.qty-input').simulate('change', mockEvent);
+    expect(wrapper.instance().handleChange).toHaveBeenCalled();
   });
 });
 

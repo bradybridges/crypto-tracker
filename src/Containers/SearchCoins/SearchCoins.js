@@ -38,9 +38,9 @@ class SearchCoins extends Component {
         <form id='search-form' onSubmit={this.handleCoinSearch}>
           <h2 id='search-header'>Search For Coins By Symbol</h2>
           <input name='symbol' type='text' maxLength='4' placeholder='Ex BTC' value={this.state.symbol} onChange={this.handleChange} />
-          <div id='search-button-div'>
+          <button id='search-button-div'>
             <img src={searchImg} alt='search button' />
-          </div>
+          </button>
         </form>
         {this.state.coin.name && <CoinCard  getCryptos={this.props.getCryptos} coin={this.state.coin} name={name} rank={rank} price={price} logo={logo_url} circulatingSupply={circulating_supply} />}
         {this.state.coin.error && <h3>Coin Not Found</h3>}

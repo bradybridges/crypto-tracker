@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './CoinCard.scss';
 import { connect } from 'react-redux';
-import { updateTrackedCoins, updateCryptos } from '../../Actions/index';
+import { updateTrackedCoins, updateCryptos, updatePortfolio } from '../../Actions/index';
 
 export class CoinCard extends Component {
 
@@ -21,7 +21,10 @@ export class CoinCard extends Component {
     this.props.updateCryptos(updatedCryptos);
     const updatedSymbols = updatedCryptos.map( coin => coin.id);
     this.props.updateTrackedCoins(updatedSymbols);
+    const updatedPortfolio = this.props.portfolio.filter(coin => coin.name !== this.props.name);
+    this.props.updatePortfolio(updatedPortfolio);
     localStorage.setItem('trackedCoins', JSON.stringify(updatedSymbols));
+    localStorage.setItem('portfolio', JSON.stringify(updatedPortfolio));
   }
 
   render() {
@@ -43,8 +46,8 @@ export class CoinCard extends Component {
             </tr>
           </tbody>
         </table>
-        {!isCoinTracked && <button onClick={this.trackCoin}>Track Coin</button>}
-        {isCoinTracked && <button onClick={this.stopTrackingCoin}>Stop Tracking Coin</button>}
+        {!isCoinTracked && <button className='tracking-btn' onClick={this.trackCoin}>Track Coin</button>}
+        {isCoinTracked && <button className='tracking-btn' onClick={this.stopTrackingCoin}>Stop Tracking Coin</button>}
       </section>
     );
   }
@@ -53,11 +56,13 @@ export class CoinCard extends Component {
 export const mapDispatchToProps = dispatch => ({
   updateTrackedCoins: symbols => dispatch( updateTrackedCoins(symbols) ),
   updateCryptos: coins => dispatch( updateCryptos(coins) ),
+  updatePortfolio: portfolio => dispatch( updatePortfolio(portfolio) ),
 });
 
 export const mapStateToProps = state => ({
   trackedCoins: state.trackedCoins,
   cryptos: state.cryptos,
+  portfolio: state.portfolio,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoinCard);

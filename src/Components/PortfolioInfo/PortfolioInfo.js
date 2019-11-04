@@ -21,7 +21,7 @@ class PortfolioInfo extends Component {
     const { total } = this.props;
     return (
       <section id='portfolio-info-container'>
-        <img src={closeButton} alt='close portfolio' onClick={this.props.closePortfolio} />
+        <img id='close-portfolio-btn' src={closeButton} alt='close portfolio' onClick={this.props.closePortfolio} />
         <h2 className='header'>Portfolio Value</h2>
         <section>
           <h4 className='header'>Total</h4>

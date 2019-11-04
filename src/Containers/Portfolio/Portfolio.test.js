@@ -39,6 +39,7 @@ describe('Portfolio', () => {
   ];
 
   const mockPortfolio = [{name: 'Bitcoin', qty: 10}, {name: 'Litecoin', qty: 3}];
+  
   beforeEach(() => {
     wrapper = shallow(<Portfolio cryptos={mockCryptos} portfolio={mockPortfolio} />);
   })
@@ -67,5 +68,50 @@ describe('Portfolio', () => {
     const mappedDispatch = mapDispatchToProps(mockDispatch);
     mappedDispatch.updatePortfolio(mockPortfolio);
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+
+  it.skip('when view value is clicked showPortfolio is called', () => {
+    wrapper.instance().showPortfolio = jest.fn();
+    const test = wrapper.find('#view-value-btn');
+    expect(test.length).toEqual(1);
+    test.simulate('click');
+    expect(wrapper.instance().showPortfolio).toHaveBeenCalled();
+  });
+
+  it('calculatePortfolioValue should return total value', () => {
+    const result = wrapper.instance().calculatePortfolioValue();
+    expect(result).toEqual('93643.64');
+  });
+
+  it('calculateIndividualCoinValues should return an array of coin values', () => {
+    const result = wrapper.instance().calculateIndividualCoinValues();
+    const expected = [
+      { name: 'Bitcoin', value: 93416.98700000001 },
+      { name: 'Litecoin', value: 226.64999999999998 }
+    ];
+    expect(result).toEqual(expected);
+  });
+
+  it('showPortfolio should set state of total, coinValues, and showPortfolio', () => {
+    wrapper.instance().showPortfolio();
+    const expectedState =  {
+      showPortfolio: true,
+      total: '93643.64',
+      coinValues: [
+        { name: 'Bitcoin', value: 93416.98700000001 },
+        { name: 'Litecoin', value: 226.64999999999998 }
+      ]
+    };
+    expect(wrapper.state()).toEqual(expectedState);
+  });
+
+  it('close portfolio should reset state', () => {
+    wrapper.instance().closePortfolio();
+    const expectedState = {
+      showPortfolio: false,
+      total: 0,
+      coinValues: [],
+    };
+    expect(wrapper.state()).toEqual(expectedState);
   });
 });

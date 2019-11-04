@@ -1,23 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PortfolioInfo should match the snapshot 1`] = `
-<section>
+<section
+  id="portfolio-info-container"
+>
   <img
     alt="close portfolio"
+    id="close-portfolio-btn"
     src="close-button.svg"
   />
-  <h2>
+  <h2
+    className="header"
+  >
     Portfolio Value
   </h2>
   <section>
-    <h4>
+    <h4
+      className="header"
+    >
       Total
     </h4>
-    <p>
+    <p
+      id="total-p"
+    >
       $
       342323.43
     </p>
     <div
+      className="coin-value-div"
       key="Bitcoin"
     >
       <p>
@@ -29,6 +39,7 @@ exports[`PortfolioInfo should match the snapshot 1`] = `
       </p>
     </div>
     <div
+      className="coin-value-div"
       key="Litecoin"
     >
       <p>
