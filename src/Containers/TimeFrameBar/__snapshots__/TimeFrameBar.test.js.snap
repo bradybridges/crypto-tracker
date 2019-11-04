@@ -7,32 +7,32 @@ exports[`TimeFrameBar should match the snapshot 1`] = `
   <tbody>
     <tr>
       <td
-        className=""
+        className="inactive"
         id="1h"
         onClick={[Function]}
       >
-        1HR
+        1 HR
       </td>
       <td
-        className=""
+        className="inactive"
         id="1d"
         onClick={[Function]}
       >
-        1D
+        1 D
       </td>
       <td
-        className=""
+        className="inactive"
         id="30d"
         onClick={[Function]}
       >
-        30D
+        30 D
       </td>
       <td
-        className=""
+        className="inactive"
         id="365d"
         onClick={[Function]}
       >
-        1YR
+        1 YR
       </td>
     </tr>
   </tbody>

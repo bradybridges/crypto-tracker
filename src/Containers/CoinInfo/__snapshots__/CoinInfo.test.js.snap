@@ -24,34 +24,55 @@ exports[`CoinInfo should match the snapshot 1`] = `
       src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg"
     />
   </div>
-  <p>
-    Rank: #
-    1
-  </p>
-  <p>
-    Symbol: 
-    BTC
-  </p>
-  <p>
-    Price: $
-    9393.23
-  </p>
-  <p>
-    Market Cap: $
-    234453454.34
-  </p>
-  <p>
-    High: $
-    19567.43
-  </p>
-  <p>
-    Circulating Supply: 
-    12314534
-  </p>
-  <p>
-    Max Supply: 
-    200000000
-  </p>
+  <div
+    id="coin-rank-info"
+  >
+    <p
+      className="coin-main"
+    >
+      Rank: #
+      1
+    </p>
+    <p
+      className="coin-main"
+    >
+      BTC
+    </p>
+  </div>
+  <div
+    id="coin-market-info"
+  >
+    <p
+      className="coin-p"
+    >
+      Price: $
+      9393.23
+    </p>
+    <p
+      className="coin-p"
+    >
+      Market Cap: $
+      234453454.34
+    </p>
+    <p
+      className="coin-p"
+    >
+      High: $
+      19567.43
+    </p>
+    <p
+      className="coin-p"
+    >
+      Circulating Supply: 
+      12314534
+    </p>
+    <p
+      className="coin-p"
+    >
+      Max Supply: 
+      200000000
+    </p>
+  </div>
   <CoinChangeInfo
     data={
       Object {

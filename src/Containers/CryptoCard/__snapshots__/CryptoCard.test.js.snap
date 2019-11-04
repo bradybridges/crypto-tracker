@@ -2,19 +2,26 @@
 
 exports[`CryptoCard should match the snapshot 1`] = `
 <NavLink
+  className="navlink"
   to="/coins/Bitcoin"
 >
   <section
     className="crypto-card"
   >
-    <h4>
+    <h4
+      className="card-item"
+    >
       Bitcoin
     </h4>
-    <p>
+    <p
+      className="card-item"
+    >
       $
       1001.83
     </p>
-    <p>
+    <p
+      className="card-item"
+    >
       %
       -13.45
     </p>
