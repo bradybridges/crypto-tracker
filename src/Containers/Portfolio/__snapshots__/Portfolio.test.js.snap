@@ -1,3 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Portfolio should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`Portfolio should match the snapshot 1`] = `
+<section
+  id="portfolio-container"
+>
+  <h2>
+    Portfolio
+  </h2>
+  <Connect(QuantityInput)
+    coin={
+      Object {
+        "circulating_supply": "18025852",
+        "currecy": "BTC",
+        "high": "19480.90",
+        "high_timestamp": "2017-12-16",
+        "id": "BTC",
+        "logo_url": "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg",
+        "market_cap": "1243423423.05",
+        "max_supply": "21000000",
+        "name": "Bitcoin",
+        "price": 9341.6987,
+        "price_date": "2019-11-02",
+        "rank": "1",
+        "symbol": "BTC",
+      }
+    }
+    key="BTC"
+    qty={10}
+  />
+  <Connect(QuantityInput)
+    coin={
+      Object {
+        "circulating_supply": "18000000",
+        "currecy": "LTC",
+        "high": "420.90",
+        "high_timestamp": "2017-12-10",
+        "id": "LTC",
+        "logo_url": "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/ltc.svg",
+        "market_cap": "1003423423.05",
+        "max_supply": "20000000",
+        "name": "Litecoin",
+        "price": 75.55,
+        "price_date": "2019-11-02",
+        "rank": "3",
+        "symbol": "LTC",
+      }
+    }
+    key="LTC"
+    qty={3}
+  />
+  <button
+    id="view-value-btn"
+    onClick={[Function]}
+  >
+    View Value
+  </button>
+</section>
+`;

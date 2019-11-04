@@ -1,3 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CryptoContainer should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`CryptoContainer should match the snapshot 1`] = `
+<section
+  id="crypto-container"
+>
+  <Connect(TimeFrameBar) />
+  <Connect(CryptoCard)
+    key="BTC"
+    name="Bitcoin"
+    percentChange={1.4}
+    price={9341.6987}
+  />
+  <Connect(CryptoCard)
+    key="LTC"
+    name="Litecoin"
+    percentChange={2.4}
+    price={75.55}
+  />
+</section>
+`;

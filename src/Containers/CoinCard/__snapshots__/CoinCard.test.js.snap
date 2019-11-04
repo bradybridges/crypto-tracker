@@ -1,3 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CoinCard should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`CoinCard should match the snapshot 1`] = `
+<section
+  id="coin-card-section"
+>
+  <h1>
+    Monero
+  </h1>
+  <img
+    alt="coin logo"
+    src="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/xmr.svg"
+  />
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          Price
+        </td>
+        <td>
+          $
+          1003.43
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Circulation
+        </td>
+        <td>
+          123123413
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button
+    onClick={[Function]}
+  >
+    Track Coin
+  </button>
+</section>
+`;

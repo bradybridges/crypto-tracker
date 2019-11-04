@@ -8,7 +8,7 @@ class PortfolioInfo extends Component {
     const { coinValues } = this.props;
     const elements = coinValues.map( coin => {
       return (
-        <div key={coin.name}>
+        <div className='coin-value-div' key={coin.name}>
           <p>{coin.name}</p>
           <p>${Number(coin.value).toFixed(2)}</p>
         </div>
@@ -17,21 +17,17 @@ class PortfolioInfo extends Component {
     return elements;
   }
 
-  closePortfolio = () => {
-
-  }
-
   render() {
     const { total } = this.props;
     return (
-      <section>
+      <section id='portfolio-info-container'>
         <img src={closeButton} alt='close portfolio' onClick={this.props.closePortfolio} />
-        <h2>Portfolio Value</h2>
-        <div>
-          <h4>Total</h4>
-          <p>${Number(total).toFixed(2)}</p>
+        <h2 className='header'>Portfolio Value</h2>
+        <section>
+          <h4 className='header'>Total</h4>
+          <p id='total-p'>${Number(total).toFixed(2)}</p>
           {this.renderCoinValues()}
-        </div>
+        </section> 
       </section>
     );
   }
