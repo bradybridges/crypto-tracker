@@ -36,13 +36,13 @@ describe('CoinCard', () => {
       high_timestamp: '2017-12-10',
     },
   ];
-  const mockTrackedCoins = ['BTC','LTC'];
+  const mockTrackedCoins = ['BTC', 'LTC'];
   const mockUpdateTrackedCoins = jest.fn();
   const mockUpdateCryptos = jest.fn();
   const mockPortfolio = [{ name: 'Bitcoin', qty: 10}, {name: 'Litecoin', qty: 5 }];
-  const wrapper = shallow(<CoinCard 
-    coin={{id:'XMR'}}
-    name='Monero'
+  const wrapper = shallow(<CoinCard
+    coin={{ id: 'XMR' }}
+    name="Monero"
     logo='https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/xmr.svg'
     price='1003.432342'
     circulatingSupply='123123413'

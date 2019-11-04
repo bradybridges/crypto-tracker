@@ -1,10 +1,9 @@
-import Nav from './Nav';
 import { shallow } from 'enzyme';
 import React from 'react';
+import Nav from './Nav';
 
 describe('Nav', () => {
   let wrapper;
-  
   beforeEach(() => {
     wrapper = shallow(<Nav />);
   });

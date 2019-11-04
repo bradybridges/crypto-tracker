@@ -4,7 +4,7 @@ import './CoinChangeInfo.scss';
 import upArrow from '../../Images/up-arrow.png';
 import downArrow from '../../Images/down-arrow.png';
 
-const CoinChangeInfo = ({data, timeFrame}) => {
+const CoinChangeInfo = ({ data, timeFrame }) => {
   const priceImg = data.price_change > 0 ? upArrow : downArrow;
   const volumeImg = data.volume_change > 0 ? upArrow : downArrow;
   const marketImg = data.market_cap_change > 0 ? upArrow : downArrow;
@@ -16,25 +16,43 @@ const CoinChangeInfo = ({data, timeFrame}) => {
   const marketChangePct = (Number(data.market_cap_change_pct) * 100).toFixed(2);
 
   return (
-    <section id='coin-change-info-container'>
-      <h2>Change in {timeFrame}</h2>
-      <div className='info-container'>
+    <section id="coin-change-info-container">
+      <h2>
+        Change in
+        {timeFrame}
+      </h2>
+      <div className="info-container">
         <p>Price</p>
-        <p>${priceChange}</p>
-        <p>%{priceChangePct}</p>
-        <img src={priceImg} alt='price indicator' />
+        <p>
+          $
+          {priceChange}
+        </p>
+        <p>
+          %
+          {priceChangePct}
+        </p>
+        <img src={priceImg} alt="price indicator" />
       </div>
-      <div className='info-container'>
+      <div className="info-container">
         <p>Volume</p>
         <p>{volChange}</p>
-        <p>%{volChangePct}</p>
-        <img src={volumeImg} alt='volume indicator' />
+        <p>
+          %
+          {volChangePct}
+        </p>
+        <img src={volumeImg} alt="volume indicator" />
       </div>
-      <div className='info-container'>
+      <div className="info-container">
         <p>Market Cap</p>
-        <p>${marketChange}</p>
-        <p>${marketChangePct}</p>
-        <img src={marketImg} alt='market indicator' />
+        <p>
+          $
+          {marketChange}
+        </p>
+        <p>
+          $
+          {marketChangePct}
+        </p>
+        <img src={marketImg} alt="market indicator" />
       </div>
     </section>
   );

@@ -8,8 +8,12 @@ import {
 
 describe('updateCryptos', () => {
   const mockCryptos = [
-    { id: 'BTC', symbol: 'BTC', price: 9000, rank: 1 },
-    { id: 'LTC', symbol: 'LTC', price: 100, rank: 3 },
+    {
+      id: 'BTC', symbol: 'BTC', price: 9000, rank: 1,
+    },
+    {
+      id: 'LTC', symbol: 'LTC', price: 100, rank: 3,
+    },
   ];
 
   it('should return an action object', () => {
