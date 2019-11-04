@@ -23,6 +23,7 @@ exports[`SearchCoins should match the snapshot 1`] = `
     />
     <button
       id="search-button-div"
+      type="button"
     >
       <img
         alt="search button"

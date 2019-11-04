@@ -7,7 +7,7 @@ describe('TimeFrameBar', () => {
   let wrapper;
   const mockUpdateTimeFrame = jest.fn();
   beforeEach(() => {
-    wrapper = shallow(<TimeFrameBar updateTimeFrame={mockUpdateTimeFrame} />);
+    wrapper = shallow(<TimeFrameBar updateTimeFrame={mockUpdateTimeFrame} timeFrame='1d' />);
   })
   it('should match the snapshot', () =>{
     expect(wrapper).toMatchSnapshot();

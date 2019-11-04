@@ -68,7 +68,7 @@ describe('App', () => {
 });
 
 describe('mapStateToProps', () => {
-  const mockCryptos = [ 
+  const mockCryptos = [
     {
       currecy: 'BTC',
       id: 'BTC',
@@ -107,13 +107,13 @@ describe('mapStateToProps', () => {
       error: 'An Error Occured',
       trackedCoins: ['BTC', 'LTC'],
       portfolio: [{name: 'Bitcoin', qty: 10}, {name: 'Litecoin', qty: 20}],
-    }
+    };
 
     const expected = {
       cryptos: mockCryptos,
       error: 'An Error Occured',
       trackedCoins: ['BTC', 'LTC'],
-    }
+    };
 
     const result = mapStateToProps(mockState);
     expect(result).toEqual(expected);
@@ -121,16 +121,16 @@ describe('mapStateToProps', () => {
 });
 
 describe('mapDispatchToProps', () => {
-  let mockDispatch, mappedDispatch;
-  
+  let mockDispatch;
+  let mappedDispatch;
   beforeEach(() => {
     mockDispatch = jest.fn();
     mappedDispatch = mapDispatchToProps(mockDispatch);
   });
 
   it('updateCrytos is dispatched with correct action', () => {
-    const actionToDispatch = actions.updateCryptos([{name: 'Bitcoin'}]);
-    mappedDispatch.updateCryptos([{name: 'Bitcoin'}]);
+    const actionToDispatch = actions.updateCryptos([{ name: 'Bitcoin' }]);
+    mappedDispatch.updateCryptos([{ name: 'Bitcoin' }]);
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 
@@ -141,15 +141,15 @@ describe('mapDispatchToProps', () => {
   });
 
   it('updateTrackedCoins should be dispatched with correct action', () => {
-    const actionToDispatch = actions.updateTrackedCoins(['BTC','LTC']);
+    const actionToDispatch = actions.updateTrackedCoins(['BTC', 'LTC']);
     mappedDispatch.updateTrackedCoins(['BTC', 'LTC']);
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 
   it('updatePortfolio should be dispatched with correct action', () => {
     const mockPortfolio = [
-      {name: 'Bitcoin', qty: 10},
-      {name: 'Litecoin', qty: 50},
+      { name: 'Bitcoin', qty: 10 },
+      { name: 'Litecoin', qty: 50 },
     ];
     const actionToDispatch = actions.updatePortfolio(mockPortfolio);
     mappedDispatch.updatePortfolio(mockPortfolio);

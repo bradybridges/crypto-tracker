@@ -1,15 +1,19 @@
 import React from 'react';
-import PortfolioInfo from './PortfolioInfo';
 import { shallow } from 'enzyme';
+import PortfolioInfo from './PortfolioInfo';
 
 describe('PortfolioInfo', () => {
   let wrapper;
   const mockCoinValues = [
     {name: 'Bitcoin', value: '1321.2332'},
     {name: 'Litecoin', value: '1971.45'}
-  ]
+  ];
   beforeEach(() => {
-    wrapper = shallow(<PortfolioInfo coinValues={mockCoinValues} total='342323.4342' />);
+    wrapper = shallow(<PortfolioInfo
+      coinValues={mockCoinValues}
+      total="342323.4342"
+      closePortfolio={jest.fn()}
+    />);
   });
 
   it('should match the snapshot', () => {

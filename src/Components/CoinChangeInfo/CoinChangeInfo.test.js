@@ -11,12 +11,12 @@ describe('CoinChangeInfo', () => {
     volume_change_pct: 10.3,
     market_cap_change: -425232,
     market_cap_change_pct: -1.1,
-  }
+  };
   beforeEach(() => {
-    wrapper = shallow(<CoinChangeInfo data={mockData} timeFrame='1d' />);
+    wrapper = shallow(<CoinChangeInfo data={mockData} timeFrame="1d" />);
   });
 
   it('should match the snapshot', () => {
-    expect(wrapper).toMatchSnapshot(); 
+    expect(wrapper).toMatchSnapshot();
   });
 });

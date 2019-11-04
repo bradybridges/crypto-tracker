@@ -8,17 +8,17 @@ import portfolioImg from '../../Images/portfolio.svg';
 const Nav = () => {
   return (
     <>
-      <NavLink className='nav-button' to='/'>
-        <img src={homeImg} alt='home button' />
+      <NavLink className="nav-button" to="/">
+        <img src={homeImg} alt="home button" />
       </NavLink>
-      <NavLink className='nav-button' to='/portfolio'>
-        <img src={portfolioImg} alt='portfolio button' />
+      <NavLink className="nav-button" to="/portfolio">
+        <img src={portfolioImg} alt="portfolio button" />
       </NavLink>
-      <NavLink to='/search' className='nav-button'>
-        <img src={searchImg} alt='search button' />
+      <NavLink to="/search" className="nav-button">
+        <img src={searchImg} alt="search button" />
       </NavLink>
     </>
-  )
-}
+  );
+};
 
 export default Nav;

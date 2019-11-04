@@ -1,24 +1,24 @@
-export const updateCryptos = cryptos => ({
+export const updateCryptos = (cryptos) => ({
   type: 'UPDATE_CRYPTOS',
-  cryptos
+  cryptos,
 });
 
-export const updateError = error => ({
+export const updateError = (error) => ({
   type: 'UPDATE_ERROR',
   error,
 });
 
-export const updateTimeFrame = timeFrame => ({
+export const updateTimeFrame = (timeFrame) => ({
   type: 'UPDATE_TIME_FRAME',
   timeFrame,
-})
+});
 
-export const updateTrackedCoins = symbols => ({
+export const updateTrackedCoins = (symbols) => ({
   type: 'UPDATE_TRACKED_COINS',
   symbols,
 });
 
-export const updatePortfolio = portfolio => ({
+export const updatePortfolio = (portfolio) => ({
   type: 'UPDATE_PORTFOLIO',
   portfolio,
 });

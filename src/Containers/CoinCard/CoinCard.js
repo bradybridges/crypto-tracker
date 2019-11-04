@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './CoinCard.scss';
 import { connect } from 'react-redux';
 import { updateTrackedCoins, updateCryptos, updatePortfolio } from '../../Actions/index';
@@ -15,25 +16,25 @@ export class CoinCard extends Component {
 
   stopTrackingCoin = (e) => {
     e.preventDefault();
-    const index = this.props.cryptos.findIndex(coin => coin.name === this.props.name);
-    let updatedCryptos = this.props.cryptos.map(crypto => crypto);
+    const index = this.props.cryptos.findIndex((coin) => coin.name === this.props.name);
+    const updatedCryptos = this.props.cryptos.map((crypto) => crypto);
     updatedCryptos.splice(index, 1);
     this.props.updateCryptos(updatedCryptos);
-    const updatedSymbols = updatedCryptos.map( coin => coin.id);
+    const updatedSymbols = updatedCryptos.map((coin) => coin.id);
     this.props.updateTrackedCoins(updatedSymbols);
-    const updatedPortfolio = this.props.portfolio.filter(coin => coin.name !== this.props.name);
+    const updatedPortfolio = this.props.portfolio.filter((coin) => coin.name !== this.props.name);
     this.props.updatePortfolio(updatedPortfolio);
     localStorage.setItem('trackedCoins', JSON.stringify(updatedSymbols));
     localStorage.setItem('portfolio', JSON.stringify(updatedPortfolio));
   }
 
   render() {
-    const {name, logo, price, circulatingSupply} = this.props;
-    const isCoinTracked = this.props.cryptos.find(coin => coin.name === name);
+    const { name, logo, price, circulatingSupply } = this.props;
+    const isCoinTracked = this.props.cryptos.find((coin) => coin.name === name);
     return (
-      <section id='coin-card-section'>
+      <section id="coin-card-section">
         <h1>{name}</h1>
-        <img src={logo} alt='coin logo' />
+        <img src={logo} alt="coin logo" />
         <table>
           <tbody>
             <tr>
@@ -46,23 +47,32 @@ export class CoinCard extends Component {
             </tr>
           </tbody>
         </table>
-        {!isCoinTracked && <button className='tracking-btn' onClick={this.trackCoin}>Track Coin</button>}
-        {isCoinTracked && <button className='tracking-btn' onClick={this.stopTrackingCoin}>Stop Tracking Coin</button>}
+        {!isCoinTracked && <button type="button" className="tracking-btn" onClick={this.trackCoin}>Track Coin</button>}
+        {isCoinTracked && <button type="button" className='tracking-btn' onClick={this.stopTrackingCoin}>Stop Tracking Coin</button>}
       </section>
     );
   }
 }
 
 export const mapDispatchToProps = dispatch => ({
-  updateTrackedCoins: symbols => dispatch( updateTrackedCoins(symbols) ),
-  updateCryptos: coins => dispatch( updateCryptos(coins) ),
-  updatePortfolio: portfolio => dispatch( updatePortfolio(portfolio) ),
+  updateTrackedCoins: (symbols) => dispatch(updateTrackedCoins(symbols)),
+  updateCryptos: (coins) => dispatch(updateCryptos(coins)),
+  updatePortfolio: (portfolio) => dispatch(updatePortfolio(portfolio)),
 });
 
-export const mapStateToProps = state => ({
+export const mapStateToProps = (state) => ({
   trackedCoins: state.trackedCoins,
   cryptos: state.cryptos,
   portfolio: state.portfolio,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoinCard);
+
+CoinCard.propTypes = {
+  updateTrackedCoins: PropTypes.func.isRequired,
+  updateCryptos: PropTypes.func.isRequired,
+  updatePortfolio: PropTypes.func.isRequired,
+  trackedCoins: PropTypes.array.isRequired,
+  cryptos: PropTypes.array.isRequired,
+  portfolio: PropTypes.array.isRequired,
+};
