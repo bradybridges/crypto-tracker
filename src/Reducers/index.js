@@ -3,7 +3,7 @@ import { cryptos } from './cryptos/cryptos';
 import { error } from './error/error';
 import { timeFrame } from './timeFrame/timeFrame';
 import { trackedCoins } from './trackedCoins/trackedCoins';
-import { portfolio } from './portfolio/portfolio.js';
+import { portfolio } from './portfolio/portfolio';
 
 export const rootReducer = combineReducers({
   cryptos,

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CryptoCard from '../CryptoCard/CryptoCard';
 import TimeFrameBar from '../TimeFrameBar/TimeFrameBar';
 import './CryptoContainer.scss';
+
 export class CryptoContainer extends Component {
 
   renderCryptos = () => {
@@ -16,10 +18,10 @@ export class CryptoContainer extends Component {
       }
 
       return (
-        <CryptoCard 
-          price={crypto.price} 
+        <CryptoCard
+          price={crypto.price}
           percentChange={percentChange}
-          name={crypto.name} 
+          name={crypto.name}
           key={crypto.id}
         />
       );
@@ -28,7 +30,7 @@ export class CryptoContainer extends Component {
 
   render() {
     return (
-      <section id='crypto-container'>
+      <section id="crypto-container">
         <TimeFrameBar />
         {this.renderCryptos()}
       </section>
@@ -36,9 +38,14 @@ export class CryptoContainer extends Component {
   }
 }
 
-export const mapStateToProps = state => ({
+export const mapStateToProps = (state) => ({
   cryptos: state.cryptos,
   timeFrame: state.timeFrame,
-})
+});
 
 export default connect(mapStateToProps)(CryptoContainer);
+
+CryptoContainer.propTypes = {
+  cryptos: PropTypes.array.isRequired,
+  timeFrame: PropTypes.string.isRequired,
+};

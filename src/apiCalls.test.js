@@ -1,4 +1,4 @@
-import { fetchTopCryptos, searchCoin} from './apiCalls';
+import { fetchTopCryptos, searchCoin } from './apiCalls';
 
 describe('fetchTopCryptos', () => {
   const mockCryptos = [
@@ -45,21 +45,21 @@ describe('fetchTopCryptos', () => {
 
   it('should be fetched with the correct url', () => {
     const expectedUrl = 'https://api.nomics.com/v1/currencies/ticker?key=fe1a57f1ee6fc9e5cee469c99171d44f&ids=BTC,LTC&interval=1h,1d,30d,365d&convert=USD';
-    fetchTopCryptos(['BTC','LTC']);
+    fetchTopCryptos(['BTC', 'LTC']);
     expect(window.fetch).toHaveBeenCalledWith(expectedUrl);
   });
 
   it('should return an array of cryptos', () => {
-    const result = fetchTopCryptos(['BTC','LTC']);
+    const result = fetchTopCryptos(['BTC', 'LTC']);
     expect(result).resolves.toEqual(mockCryptos);
   })
 
   it('should return an error if response is not ok', () => {
     window.fetch = jest.fn().mockImplementation(() => {
-      return Promise.resolve({ok: false});
+      return Promise.resolve({ ok: false });
     });
     const result = fetchTopCryptos(['BTC', 'LTC']);
-    expect(result).rejects.toEqual(Error('Failed to fetch coins...'))
+    expect(result).rejects.toEqual(Error('Failed to fetch coins...'));
   });
 
   it('should return an error if the promise rejects', () => {
@@ -67,7 +67,7 @@ describe('fetchTopCryptos', () => {
       return Promise.reject(Error('Failed to fetch'));
     });
 
-    const result = fetchTopCryptos(['BTC','LTC']);
+    const result = fetchTopCryptos(['BTC', 'LTC']);
     expect(result).rejects.toEqual(Error('Failed to fetch'));
   });
 });
@@ -110,7 +110,7 @@ describe('searchCoin', () => {
 
   it('should return an error if the response is not okay', () => {
     window.fetch = jest.fn().mockImplementation(() => {
-      return Promise.resolve({ok: false});
+      return Promise.resolve({ ok: false });
     });
 
     const result = searchCoin('ZZZ');

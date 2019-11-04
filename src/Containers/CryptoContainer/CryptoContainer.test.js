@@ -19,9 +19,9 @@ describe('CryptoContainer', () => {
       rank: '1',
       high: '19480.90',
       high_timestamp: '2017-12-16',
-      '1d': { 
+      '1d': {
         price_change_pct: 1.4,
-      }
+      },
     },
     {
       currecy: 'LTC',
@@ -37,14 +37,14 @@ describe('CryptoContainer', () => {
       rank: '3',
       high: '420.90',
       high_timestamp: '2017-12-10',
-      '1d': { 
+      '1d': {
         price_change_pct: 2.4,
-      }
+      },
     },
   ];
 
   beforeEach(() => {
-    wrapper = shallow(<CryptoContainer cryptos={mockCryptos} timeFrame='1d' />);
+    wrapper = shallow(<CryptoContainer cryptos={mockCryptos} timeFrame="1d" />);
   });
 
   it('should match the snapshot', () => {
@@ -53,9 +53,9 @@ describe('CryptoContainer', () => {
 
   it('renderCryptos should return array of crypto cards', () => {
     const result = wrapper.instance().renderCryptos();
-    expect(result.length).toEqual(2);  
+    expect(result.length).toEqual(2);
   });
-}); 
+});
 
 describe('mapStateToProps', () => {
   const mockCryptos = [
@@ -73,9 +73,9 @@ describe('mapStateToProps', () => {
       rank: '1',
       high: '19480.90',
       high_timestamp: '2017-12-16',
-      '1d': { 
+      '1d': {
         price_change_pct: 1.4,
-      }
+      },
     },
     {
       currecy: 'LTC',
@@ -91,9 +91,9 @@ describe('mapStateToProps', () => {
       rank: '3',
       high: '420.90',
       high_timestamp: '2017-12-10',
-      '1d': { 
+      '1d': {
         price_change_pct: 2.4,
-      }
+      },
     },
   ];
 

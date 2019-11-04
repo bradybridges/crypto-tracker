@@ -14,7 +14,7 @@ exports[`TimeFrameBar should match the snapshot 1`] = `
         1 HR
       </td>
       <td
-        className="inactive"
+        className="active"
         id="1d"
         onClick={[Function]}
       >

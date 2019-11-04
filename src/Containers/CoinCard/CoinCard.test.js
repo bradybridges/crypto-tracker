@@ -36,21 +36,24 @@ describe('CoinCard', () => {
       high_timestamp: '2017-12-10',
     },
   ];
-  const mockTrackedCoins = ['BTC','LTC'];
+  const mockTrackedCoins = ['BTC', 'LTC'];
   const mockUpdateTrackedCoins = jest.fn();
   const mockUpdateCryptos = jest.fn();
-  const wrapper = shallow(<CoinCard 
-    coin={{id:'XMR'}}
-    name='Monero'
-    logo='https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/xmr.svg'
-    price='1003.432342'
-    circulatingSupply='123123413'
+  const mockPortfolio = [{ name: 'Bitcoin', qty: 10}, {name: 'Litecoin', qty: 5 }];
+  const wrapper = shallow(<CoinCard
+    coin={{ id: 'XMR' }}
+    name="Monero"
+    logo="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/xmr.svg"
+    price="1003.432342"
+    circulatingSupply="123123413"
     cryptos={mockCryptos}
     trackedCoins={mockTrackedCoins}
     updateTrackedCoins={mockUpdateTrackedCoins}
     getCryptos={mockUpdateCryptos}
-    />
-  );
+    updateCryptos={jest.fn()}
+    updatePortfolio={jest.fn()}
+    portfolio={mockPortfolio}
+  />);
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
@@ -67,41 +70,40 @@ describe('CoinCard', () => {
   });
 
   it('stopTrackingCoin should remove coin from cryptos and trackedcoins', () => {
-    const mockPortfolio = [{name: 'Bitcoin', qty: 10}, {name: 'Litecoin', qty: 5}];
-    const wrapper2 = shallow(<CoinCard 
-      coin={{id:'BTC'}}
-      name='Bitcoin'
-      logo='https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg'
-      price='1003.432342'
-      circulatingSupply='123123413'
+    const mockPortfolio = [{ name: 'Bitcoin', qty: 10 }, { name: 'Litecoin', qty: 5 }];
+    const wrapper2 = shallow(<CoinCard
+      coin={{ id: 'BTC' }}
+      name="Bitcoin"
+      logo="https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg"
+      price="1003.432342"
+      circulatingSupply="123123413"
       cryptos={mockCryptos}
       trackedCoins={mockTrackedCoins}
       updateTrackedCoins={mockUpdateTrackedCoins}
       updateCryptos={mockUpdateCryptos}
       portfolio={mockPortfolio}
       updatePortfolio={jest.fn()}
-      />
-    );
+    />);
     const expectedCryptos = [
       {
-        circulating_supply: "18000000", 
-        currecy: "LTC",
-        high: "420.90",
-        high_timestamp: "2017-12-10",
-        id: "LTC",
-        logo_url: "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/ltc.svg",
-        market_cap: "1003423423.05",
-        max_supply: "20000000",
-        name: "Litecoin",
-        price: 75.55, 
-        price_date: "2019-11-02",
-        rank: "3",
-        symbol: "LTC"
-      }
+        circulating_supply: '18000000',
+        currecy: 'LTC',
+        high: '420.90',
+        high_timestamp: '2017-12-10',
+        id: 'LTC',
+        logo_url: 'https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/ltc.svg',
+        market_cap: '1003423423.05',
+        max_supply: '20000000',
+        name: 'Litecoin',
+        price: 75.55,
+        price_date: '2019-11-02',
+        rank: '3',
+        symbol: 'LTC',
+      },
     ];
     wrapper2.instance().props.updateCryptos.mockClear();
     wrapper2.instance().props.updateTrackedCoins.mockClear();
-    wrapper2.instance().stopTrackingCoin({preventDefault: jest.fn()})
+    wrapper2.instance().stopTrackingCoin({ preventDefault: jest.fn() });
     expect(wrapper2.instance().props.updateCryptos).toHaveBeenCalledWith(expectedCryptos);
     expect(wrapper2.instance().props.updateTrackedCoins).toHaveBeenCalledWith(['LTC']);
   });
@@ -148,7 +150,7 @@ describe('mapStateToProps', () => {
       error: 'There was an error',
     }
     const result = mapStateToProps(mockState);
-    expect(result).toEqual({cryptos: mockCryptos, trackedCoins: mockTrackedCoins});
+    expect(result).toEqual({ cryptos: mockCryptos, trackedCoins: mockTrackedCoins });
   });
 });
 
@@ -194,4 +196,4 @@ describe('mapDispatchToProps', () => {
   expect(mockDispatch).toHaveBeenCalledWith(trackedCoinsAction);
   mappedDispatch.updateCryptos(mockCryptos);
   expect(mockDispatch).toHaveBeenCalledWith(cryptosAction);
-}); 
+});

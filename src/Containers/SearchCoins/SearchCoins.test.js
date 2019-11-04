@@ -6,7 +6,7 @@ import * as api from '../../apiCalls';
 describe('SearchCoins', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<SearchCoins />);
+    wrapper = shallow(<SearchCoins getCryptos={jest.fn()} />);
   });
 
   it('should match the snapshot', () => {
