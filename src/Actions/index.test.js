@@ -5,12 +5,11 @@ import {
   updateTrackedCoins,
   updatePortfolio,
 } from './index';
-import { exportAllDeclaration } from '@babel/types';
 
 describe('updateCryptos', () => {
   const mockCryptos = [
-    {id: 'BTC', symbol: 'BTC', price: 9000, rank: 1},
-    {id: 'LTC', symbol: 'LTC', price: 100, rank: 3},
+    { id: 'BTC', symbol: 'BTC', price: 9000, rank: 1 },
+    { id: 'LTC', symbol: 'LTC', price: 100, rank: 3 },
   ];
 
   it('should return an action object', () => {
@@ -50,12 +49,12 @@ describe('updateTimeFrame', () => {
 describe('updateTrackedCoins', () => {
   const expected = {
     type: 'UPDATE_TRACKED_COINS',
-    symbols: ['BTC','LTC','BCH'],
+    symbols: ['BTC', 'LTC', 'BCH'],
   };
 
   it('should return an action object', () => {
-    const result = updateTrackedCoins(['BTC','LTC','BCH']);
-    expect(result).toEqual(expected)
+    const result = updateTrackedCoins(['BTC', 'LTC', 'BCH']);
+    expect(result).toEqual(expected);
   });
 });
 
@@ -73,4 +72,4 @@ describe('updatePortfolio', () => {
     const result = updatePortfolio(mockPortfolio);
     expect(result).toEqual(expected);
   });
-})
+});
