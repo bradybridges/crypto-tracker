@@ -22,6 +22,9 @@ export class QuantityInput extends Component {
       this.setState({name, qty})
       this.updatePortfolio(name, qty, indexExistingCoin);
     } else if( qty === 0) {
+      this.setState({name: '', qty: 0});
+      this.updatePortfolio(name, 0, indexExistingCoin);
+    } else {
       this.setState({name: '', qty: ''});
     }
   }
