@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/crypto-tracker/static/css/main.8f1badde.chunk.css",
+    "main.js": "/crypto-tracker/static/js/main.aee0947a.chunk.js",
+    "main.js.map": "/crypto-tracker/static/js/main.aee0947a.chunk.js.map",
+    "runtime-main.js": "/crypto-tracker/static/js/runtime-main.9907b982.js",
+    "runtime-main.js.map": "/crypto-tracker/static/js/runtime-main.9907b982.js.map",
+    "static/js/2.847f80a8.chunk.js": "/crypto-tracker/static/js/2.847f80a8.chunk.js",
+    "static/js/2.847f80a8.chunk.js.map": "/crypto-tracker/static/js/2.847f80a8.chunk.js.map",
+    "index.html": "/crypto-tracker/index.html",
+    "precache-manifest.c576db5616b98743bf17090bf287aa75.js": "/crypto-tracker/precache-manifest.c576db5616b98743bf17090bf287aa75.js",
+    "service-worker.js": "/crypto-tracker/service-worker.js",
+    "static/css/main.8f1badde.chunk.css.map": "/crypto-tracker/static/css/main.8f1badde.chunk.css.map",
+    "static/media/CoinInfo.scss": "/crypto-tracker/static/media/30 Black abstract Wallpapers HD Download.7be4698b.jpg",
+    "static/media/close-button.svg": "/crypto-tracker/static/media/close-button.71ee3801.svg",
+    "static/media/home.svg": "/crypto-tracker/static/media/home.33bc766e.svg",
+    "static/media/left-arrow.svg": "/crypto-tracker/static/media/left-arrow.b272803d.svg",
+    "static/media/portfolio.svg": "/crypto-tracker/static/media/portfolio.da1c4f1f.svg",
+    "static/media/search.svg": "/crypto-tracker/static/media/search.fcc34635.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9907b982.js",
+    "static/js/2.847f80a8.chunk.js",
+    "static/css/main.8f1badde.chunk.css",
+    "static/js/main.aee0947a.chunk.js"
+  ]
+}
