@@ -35,6 +35,7 @@ exports[`CoinCard should match the snapshot 1`] = `
   <button
     className="tracking-btn"
     onClick={[Function]}
+    type="button"
   >
     Track Coin
   </button>

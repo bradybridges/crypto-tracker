@@ -52,6 +52,7 @@ exports[`Portfolio should match the snapshot 1`] = `
   <button
     id="view-value-btn"
     onClick={[Function]}
+    type="button"
   >
     View Value
   </button>

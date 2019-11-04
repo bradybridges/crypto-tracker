@@ -41,12 +41,10 @@ export const CoinInfo = (props) => {
           {high}
         </p>
         <p className="coin-p">
-          Circulating Supply:
-          {coin.circulating_supply}
+          Circulating Supply: {coin.circulating_supply}
         </p>
         <p className="coin-p">
-          Max Supply: 
-          {coin.max_supply}
+          Max Supply: {coin.max_supply}
         </p>
       </div>
       <CoinChangeInfo data={timeFrameData} timeFrame={props.timeFrame}/>

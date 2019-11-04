@@ -18,8 +18,7 @@ const CoinChangeInfo = ({ data, timeFrame }) => {
   return (
     <section id="coin-change-info-container">
       <h2>
-        Change in
-        {timeFrame}
+        Change in {timeFrame}
       </h2>
       <div className="info-container">
         <p>Price</p>
