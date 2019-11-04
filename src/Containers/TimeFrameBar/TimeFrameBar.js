@@ -11,18 +11,18 @@ export class TimeFrameBar extends Component {
   }
 
   render() {
-    const oneHourClass = this.props.timeFrame === '1h' ? 'active' : '';
-    const oneDayClass = this.props.timeFrame === '1d' ? 'active' : '';
-    const oneMonthClass = this.props.timeFrame === '30d' ? 'active' : '';
-    const oneYearClass = this.props.timeFrame === '365d' ? 'active' : '';
+    const oneHourClass = this.props.timeFrame === '1h' ? 'active' : 'inactive';
+    const oneDayClass = this.props.timeFrame === '1d' ? 'active' : 'inactive';
+    const oneMonthClass = this.props.timeFrame === '30d' ? 'active' : 'inactive';
+    const oneYearClass = this.props.timeFrame === '365d' ? 'active' : 'inactive';
     return (
       <table id='time-frame-table'>
         <tbody>
           <tr>
-            <td className={oneHourClass} onClick={this.handleClick} id='1h'>1HR</td>
-            <td className={oneDayClass} onClick={this.handleClick} id='1d'>1D</td>
-            <td className={oneMonthClass} onClick={this.handleClick} id='30d'>30D</td>
-            <td className={oneYearClass} onClick={this.handleClick} id='365d'>1YR</td>
+            <td className={oneHourClass} onClick={this.handleClick} id='1h'>1 HR</td>
+            <td className={oneDayClass} onClick={this.handleClick} id='1d'>1 D</td>
+            <td className={oneMonthClass} onClick={this.handleClick} id='30d'>30 D</td>
+            <td className={oneYearClass} onClick={this.handleClick} id='365d'>1 YR</td>
           </tr>
         </tbody>
       </table>

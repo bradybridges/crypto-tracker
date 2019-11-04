@@ -10,6 +10,13 @@
 
 #view-value-btn {
   width: 80%;
-  height: 70px;
+  height: 50px;
   border-radius: 4px;
+  background-color: black;
+  color: white;
+  font-size: 1em;
+  font-weight: 800;
+  &:hover {
+    cursor: pointer;
+  }
 }

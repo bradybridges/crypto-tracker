@@ -19,13 +19,17 @@ export const CoinInfo = (props) => {
         <h2>{coin.name}</h2>
         <img src={coin.logo_url} alt='coin logo' />
       </div>
-      <p>Rank: #{coin.rank}</p>
-      <p>Symbol: {coin.id}</p>
-      <p>Price: ${price}</p>
-      <p>Market Cap: ${coin.market_cap}</p>
-      <p>High: ${high}</p>
-      <p>Circulating Supply: {coin.circulating_supply}</p>
-      <p>Max Supply: {coin.max_supply}</p>
+      <div id='coin-rank-info'>
+        <p className='coin-main'>Rank: #{coin.rank}</p>
+        <p className='coin-main'>{coin.id}</p>
+      </div>
+      <div id='coin-market-info'>
+        <p className='coin-p'>Price: ${price}</p>
+        <p className='coin-p'>Market Cap: ${coin.market_cap}</p>
+        <p className='coin-p'>High: ${high}</p>
+        <p className='coin-p'>Circulating Supply: {coin.circulating_supply}</p>
+        <p className='coin-p'>Max Supply: {coin.max_supply}</p>
+      </div>
       <CoinChangeInfo data={timeFrameData} timeFrame={props.timeFrame}/>
     </section>
   );

@@ -10,11 +10,11 @@ export const CryptoCard = (props) => {
   const percentChange = (Number(props.percentChange) * 100).toFixed(2);
   const arrowSrc = Number(props.percentChange) < 0 ? downArrow : upArrow;
   return (
-    <NavLink to={`/coins/${props.name}`}>
+    <NavLink className='navlink' to={`/coins/${props.name}`}>
     <section className='crypto-card'>
-        <h4>{props.name}</h4>
-        <p>${price}</p>
-        <p>%{percentChange}</p>
+        <h4 className='card-item'>{props.name}</h4>
+        <p className='card-item'>${price}</p>
+        <p className='card-item'>%{percentChange}</p>
         <img src={arrowSrc} alt='percent change indicator' />
     </section>
     </NavLink>

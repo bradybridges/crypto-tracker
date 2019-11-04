@@ -43,8 +43,8 @@ export class CoinCard extends Component {
             </tr>
           </tbody>
         </table>
-        {!isCoinTracked && <button onClick={this.trackCoin}>Track Coin</button>}
-        {isCoinTracked && <button onClick={this.stopTrackingCoin}>Stop Tracking Coin</button>}
+        {!isCoinTracked && <button className='tracking-btn' onClick={this.trackCoin}>Track Coin</button>}
+        {isCoinTracked && <button className='tracking-btn' onClick={this.stopTrackingCoin}>Stop Tracking Coin</button>}
       </section>
     );
   }
