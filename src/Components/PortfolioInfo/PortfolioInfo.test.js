@@ -9,7 +9,11 @@ describe('PortfolioInfo', () => {
     {name: 'Litecoin', value: '1971.45'}
   ]
   beforeEach(() => {
-    wrapper = shallow(<PortfolioInfo coinValues={mockCoinValues} total='342323.4342' />);
+    wrapper = shallow(<PortfolioInfo
+      coinValues={mockCoinValues}
+      total='342323.4342'
+      closePortfolio={jest.fn()}
+    />);
   });
 
   it('should match the snapshot', () => {

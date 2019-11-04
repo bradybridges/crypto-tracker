@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './CoinChangeInfo.scss';
 import upArrow from '../../Images/up-arrow.png';
 import downArrow from '../../Images/down-arrow.png';
@@ -40,3 +41,8 @@ const CoinChangeInfo = ({data, timeFrame}) => {
 }
 
 export default CoinChangeInfo;
+
+CoinChangeInfo.propTypes = {
+  data: PropTypes.object.isRequired,
+  timeFrame: PropTypes.string.isRequired,
+};

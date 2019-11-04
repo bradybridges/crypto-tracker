@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 import { fetchTopCryptos } from '../../apiCalls';
 import { connect } from 'react-redux';
@@ -84,3 +85,12 @@ export const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+App.propTypes = {
+  updateCryptos: PropTypes.func.isRequired,
+  updateError: PropTypes.func.isRequired,
+  updateTrackedCoins: PropTypes.func.isRequired,
+  updatePortfolio: PropTypes.func.isRequired,
+  cryptos: PropTypes.array.isRequired,
+  trackedCoins: PropTypes.array.isRequired,
+};

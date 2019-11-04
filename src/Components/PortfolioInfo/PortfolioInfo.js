@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './PortfolioInfo.scss';
 import closeButton from '../../Images/close-button.svg';
 
@@ -34,3 +35,9 @@ class PortfolioInfo extends Component {
 }
 
 export default PortfolioInfo;
+
+PortfolioInfo.propTypes = {
+  total: PropTypes.string.isRequired,
+  coinValues: PropTypes.array.isRequired,
+  closePortfolio: PropTypes.func.isRequired,
+};

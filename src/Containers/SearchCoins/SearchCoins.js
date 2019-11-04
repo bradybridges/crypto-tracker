@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './SearchCoins.scss';
 import searchImg from '../../Images/search.svg';
 import { searchCoin } from '../../apiCalls';
-import CoinCard  from '../CoinCard/CoinCard';
+import CoinCard from '../CoinCard/CoinCard';
 
 class SearchCoins extends Component {
   constructor() {
@@ -50,3 +51,7 @@ class SearchCoins extends Component {
 }
 
 export default SearchCoins;
+
+SearchCoins.propTypes = {
+  getCryptos: PropTypes.func.isRequired,
+};

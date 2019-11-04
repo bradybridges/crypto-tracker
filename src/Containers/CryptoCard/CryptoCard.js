@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import downArrow from '../../Images/down-arrow.png';
 import upArrow from '../../Images/up-arrow.png';
 import { connect } from 'react-redux';
@@ -11,12 +12,12 @@ export const CryptoCard = (props) => {
   const arrowSrc = Number(props.percentChange) < 0 ? downArrow : upArrow;
   return (
     <NavLink className='navlink' to={`/coins/${props.name}`}>
-    <section className='crypto-card'>
-        <h4 className='card-item'>{props.name}</h4>
-        <p className='card-item'>${price}</p>
-        <p className='card-item'>%{percentChange}</p>
-        <img src={arrowSrc} alt='percent change indicator' />
-    </section>
+      <section className='crypto-card'>
+          <h4 className='card-item'>{props.name}</h4>
+          <p className='card-item'>${price}</p>
+          <p className='card-item'>%{percentChange}</p>
+          <img src={arrowSrc} alt='percent change indicator' />
+      </section>
     </NavLink>
   );
 }
@@ -25,3 +26,9 @@ export const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(CryptoCard);
+
+CryptoCard.propTypes = {
+  price: PropTypes.string.isRequired,
+  percentChange: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};

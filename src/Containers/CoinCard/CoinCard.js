@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './CoinCard.scss';
 import { connect } from 'react-redux';
 import { updateTrackedCoins, updateCryptos, updatePortfolio } from '../../Actions/index';
@@ -66,3 +67,12 @@ export const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoinCard);
+
+CoinCard.propTypes = {
+  updateTrackedCoins: PropTypes.func.isRequired,
+  updateCryptos: PropTypes.func.isRequired,
+  updatePortfolio: PropTypes.func.isRequired,
+  trackedCoins: PropTypes.array.isRequired,
+  cryptos: PropTypes.array.isRequired,
+  portfolio: PropTypes.array.isRequired,
+};

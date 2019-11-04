@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './TimeFrameBar.scss';
 import { updateTimeFrame } from '../../Actions/index';
 import { connect } from 'react-redux';
@@ -39,3 +40,8 @@ export const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TimeFrameBar);
+
+TimeFrameBar.propTypes = {
+  timeFrame: PropTypes.string.isRequired,
+  updateTimeFrame: PropTypes.func.isRequired,
+};

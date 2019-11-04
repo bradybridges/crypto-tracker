@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import CoinChangeInfo from '../../Components/CoinChangeInfo/CoinChangeInfo';
 import { connect } from 'react-redux';
@@ -40,3 +41,8 @@ export const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(CoinInfo);
+
+CoinInfo.propTypes = {
+  coin: PropTypes.object.isRequired,
+  timeFrame: PropTypes.string.isRequired,
+};

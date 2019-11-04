@@ -39,6 +39,7 @@ describe('CoinCard', () => {
   const mockTrackedCoins = ['BTC','LTC'];
   const mockUpdateTrackedCoins = jest.fn();
   const mockUpdateCryptos = jest.fn();
+  const mockPortfolio = [{ name: 'Bitcoin', qty: 10}, {name: 'Litecoin', qty: 5 }];
   const wrapper = shallow(<CoinCard 
     coin={{id:'XMR'}}
     name='Monero'
@@ -49,6 +50,10 @@ describe('CoinCard', () => {
     trackedCoins={mockTrackedCoins}
     updateTrackedCoins={mockUpdateTrackedCoins}
     getCryptos={mockUpdateCryptos}
+    updateCryptos={jest.fn()}
+    updatePortfolio={jest.fn()}
+    cryptos={mockCryptos}
+    portfolio={mockPortfolio}
     />
   );
 

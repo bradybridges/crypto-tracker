@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CryptoCard from '../CryptoCard/CryptoCard';
 import TimeFrameBar from '../TimeFrameBar/TimeFrameBar';
@@ -42,3 +43,8 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(CryptoContainer);
+
+CryptoContainer.propTypes = {
+  cryptos: PropTypes.array.isRequired,
+  timeFrame: PropTypes.string.isRequired,
+};

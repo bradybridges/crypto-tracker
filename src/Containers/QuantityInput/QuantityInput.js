@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updatePortfolio } from '../../Actions/index';
 import './QuantityInput.scss';
@@ -61,3 +62,8 @@ export const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuantityInput);
+
+QuantityInput.propTypes = {
+  portfolio: PropTypes.array.isRequired,
+  updatePortfolio: PropTypes.func.isRequired,
+};
