@@ -43,7 +43,6 @@ export class Portfolio extends Component {
       portfolioInfo.push({ name: currentCoin.name, value });
       return portfolioInfo;
     }, []);
-    console.log(coinValues);
     return coinValues;
   }
 

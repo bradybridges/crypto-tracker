@@ -57,6 +57,15 @@ describe('QuantityInput', () => {
     wrapper.instance().updatePortfolio('Ripple', 3, -1);
     expect(wrapper.instance().props.updatePortfolio).toHaveBeenCalledWith(expectedPortfolio);
   });
+
+  it.skip('when quantity input changes handleChange should be called', () => {
+    const mockEvent = {
+      target: {value: '10'}
+    };
+    wrapper.instance().handleChange = jest.fn();
+    wrapper.find('.qty-input').simulate('change', mockEvent);
+    expect(wrapper.instance().handleChange).toHaveBeenCalled();
+  });
 });
 
 describe('mapDispatchToProps', () => {
