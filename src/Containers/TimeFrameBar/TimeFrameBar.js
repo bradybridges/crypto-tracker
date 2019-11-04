@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import './TimeFrameBar.scss';
 import { updateTimeFrame } from '../../Actions/index';
-import { connect } from 'react-redux';
 
 export class TimeFrameBar extends Component {
 
@@ -20,10 +20,10 @@ export class TimeFrameBar extends Component {
       <table id='time-frame-table'>
         <tbody>
           <tr>
-            <td className={oneHourClass} onClick={this.handleClick} id='1h'>1 HR</td>
-            <td className={oneDayClass} onClick={this.handleClick} id='1d'>1 D</td>
-            <td className={oneMonthClass} onClick={this.handleClick} id='30d'>30 D</td>
-            <td className={oneYearClass} onClick={this.handleClick} id='365d'>1 YR</td>
+            <td className={oneHourClass} onClick={this.handleClick} id="1h">1 HR</td>
+            <td className={oneDayClass} onClick={this.handleClick} id="1d">1 D</td>
+            <td className={oneMonthClass} onClick={this.handleClick} id="30d">30 D</td>
+            <td className={oneYearClass} onClick={this.handleClick} id="365d">1 YR</td>
           </tr>
         </tbody>
       </table>
@@ -32,10 +32,10 @@ export class TimeFrameBar extends Component {
 };
 
 export const mapDispatchToProps = dispatch => ({
-  updateTimeFrame: timeFrame => dispatch( updateTimeFrame(timeFrame)),
+  updateTimeFrame: (timeFrame) => dispatch(updateTimeFrame(timeFrame)),
 });
 
-export const mapStateToProps = state => ({
+export const mapStateToProps = (state) => ({
   timeFrame: state.timeFrame,
 });
 

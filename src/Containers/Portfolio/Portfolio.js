@@ -17,7 +17,7 @@ export class Portfolio extends Component {
 
   renderInputs = () => {
     const coinInputs = this.props.cryptos.map( coin => {
-      const existingCoin = this.props.portfolio.find( crypto => crypto.name === coin.name);
+      const existingCoin = this.props.portfolio.find((crypto) => crypto.name === coin.name);
       const qty = existingCoin ? existingCoin.qty : 0;
       return (
         <QuantityInput key={coin.id} coin={coin} qty={qty} />
@@ -38,7 +38,7 @@ export class Portfolio extends Component {
 
   calculateIndividualCoinValues = () => {
     const coinValues = this.props.portfolio.reduce((portfolioInfo, currentCoin) => {
-      const currentCoinInfo = this.props.cryptos.find(coin => coin.name === currentCoin.name);
+      const currentCoinInfo = this.props.cryptos.find((coin) => coin.name === currentCoin.name);
       const value = currentCoinInfo.price * currentCoin.qty;
       portfolioInfo.push({ name: currentCoin.name, value });
       return portfolioInfo;
@@ -50,11 +50,11 @@ export class Portfolio extends Component {
     const totalValue = this.calculatePortfolioValue();
     const individualCoinValues = this.calculateIndividualCoinValues();
     this.setState(
-      { 
+      {
         total: totalValue, 
         coinValues: individualCoinValues,
         showPortfolio: true, 
-      }
+      },
     );
   }
 
@@ -67,25 +67,26 @@ export class Portfolio extends Component {
       <section id='portfolio-container'>
         <h2>Portfolio</h2>
         {this.renderInputs()}
-        <button id='view-value-btn' onClick={this.showPortfolio}>View Value</button>
-        {this.state.showPortfolio && <PortfolioInfo 
-          total={this.state.total} 
-          coinValues={this.state.coinValues} 
-          closePortfolio={this.closePortfolio}
+        <button type='button' id="view-value-btn" onClick={this.showPortfolio}>View Value</button>
+        {this.state.showPortfolio && (
+          <PortfolioInfo
+            total={this.state.total}
+            coinValues={this.state.coinValues}
+            closePortfolio={this.closePortfolio}
           />
-        }
+        )}
       </section>
     );
   }
 }
 
-export const mapStateToProps = state => ({
+export const mapStateToProps = (state) => ({
   cryptos: state.cryptos,
   portfolio: state.portfolio,
 });
 
-export const mapDispatchToProps = dispatch => ({
-  updatePortfolio: portfolio => dispatch( updatePortfolio(portfolio) ),
+export const mapDispatchToProps = (dispatch) => ({
+  updatePortfolio: (portfolio) => dispatch(updatePortfolio(portfolio)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Portfolio);

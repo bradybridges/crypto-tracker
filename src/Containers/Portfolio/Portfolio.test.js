@@ -39,7 +39,6 @@ describe('Portfolio', () => {
   ];
 
   const mockPortfolio = [{name: 'Bitcoin', qty: 10}, {name: 'Litecoin', qty: 3}];
-  
   beforeEach(() => {
     wrapper = shallow(<Portfolio cryptos={mockCryptos} portfolio={mockPortfolio} />);
   })
@@ -57,7 +56,7 @@ describe('Portfolio', () => {
     const expected = {
       cryptos: mockCryptos,
       portfolio: mockPortfolio,
-    }
+    };
     const result = mapStateToProps(mockState);
     expect(result).toEqual(expected);
   });
@@ -87,19 +86,19 @@ describe('Portfolio', () => {
     const result = wrapper.instance().calculateIndividualCoinValues();
     const expected = [
       { name: 'Bitcoin', value: 93416.98700000001 },
-      { name: 'Litecoin', value: 226.64999999999998 }
+      { name: 'Litecoin', value: 226.64999999999998 },
     ];
     expect(result).toEqual(expected);
   });
 
   it('showPortfolio should set state of total, coinValues, and showPortfolio', () => {
     wrapper.instance().showPortfolio();
-    const expectedState =  {
+    const expectedState = {
       showPortfolio: true,
       total: '93643.64',
       coinValues: [
         { name: 'Bitcoin', value: 93416.98700000001 },
-        { name: 'Litecoin', value: 226.64999999999998 }
+        { name: 'Litecoin', value: 226.64999999999998 },
       ]
     };
     expect(wrapper.state()).toEqual(expectedState);
