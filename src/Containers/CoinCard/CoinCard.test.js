@@ -67,6 +67,7 @@ describe('CoinCard', () => {
   });
 
   it('stopTrackingCoin should remove coin from cryptos and trackedcoins', () => {
+    const mockPortfolio = [{name: 'Bitcoin', qty: 10}, {name: 'Litecoin', qty: 5}];
     const wrapper2 = shallow(<CoinCard 
       coin={{id:'BTC'}}
       name='Bitcoin'
@@ -77,6 +78,8 @@ describe('CoinCard', () => {
       trackedCoins={mockTrackedCoins}
       updateTrackedCoins={mockUpdateTrackedCoins}
       updateCryptos={mockUpdateCryptos}
+      portfolio={mockPortfolio}
+      updatePortfolio={jest.fn()}
       />
     );
     const expectedCryptos = [

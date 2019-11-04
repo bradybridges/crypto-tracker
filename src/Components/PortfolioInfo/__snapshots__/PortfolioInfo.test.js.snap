@@ -6,6 +6,7 @@ exports[`PortfolioInfo should match the snapshot 1`] = `
 >
   <img
     alt="close portfolio"
+    id="close-portfolio-btn"
     src="close-button.svg"
   />
   <h2

@@ -42,8 +42,8 @@ describe('QuantityInput', () => {
     };
     wrapper.instance().handleChange(mockEvent);
     expect(wrapper.state('name')).toEqual('');
-    expect(wrapper.state('qty')).toEqual('');
-    expect(wrapper.instance().updatePortfolio).not.toHaveBeenCalled();
+    expect(wrapper.state('qty')).toEqual(0);
+    expect(wrapper.instance().updatePortfolio).toHaveBeenCalledWith('Bitcoin', 0, 0);
   });
 
   it('updatePortfolio should update coin if it already exists', () => {
