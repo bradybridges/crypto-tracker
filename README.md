@@ -1,5 +1,5 @@
 # Crypto Tracker
-View the live page [here.](https://bradybridges.github.io/crypto-tracker/)
+***API doesn't allow request other than from localhost:/3000, to test please clone this repo and follow installation instructions***
 
 ## Table of contents
 * [Objective](#Objective)
