@@ -10,7 +10,7 @@
 
 ## Objective
   
-  The objective behind this application is to get confortable using Redux to bring data to components without having to prop drill. All the while bringing a useful application for cryptocurrency investors. Emphasizes testing to ensure that everything is woring as expected. Prioritizes mobile users.
+  The objective behind this application is to get comfortable using Redux to manage application data and to reinforce my ability to bring data to components efficiently. All the while bringing a useful application for cryptocurrency investors. Emphasizes unit testing to ensure that everything is working as expected. Prioritizes mobile users.
 
 ## Tools Used
 
