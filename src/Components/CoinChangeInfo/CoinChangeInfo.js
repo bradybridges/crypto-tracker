@@ -30,7 +30,7 @@ const CoinChangeInfo = ({ data, timeFrame }) => {
           %
           {priceChangePct}
         </p>
-        <img src={priceImg} alt="price indicator" />
+        <img className="indicator" src={priceImg} alt="price indicator" />
       </div>
       <div className="info-container">
         <p>Volume</p>
@@ -39,7 +39,7 @@ const CoinChangeInfo = ({ data, timeFrame }) => {
           %
           {volChangePct}
         </p>
-        <img src={volumeImg} alt="volume indicator" />
+        <img className="indicator" src={volumeImg} alt="volume indicator" />
       </div>
       <div className="info-container">
         <p>Market Cap</p>
@@ -51,7 +51,7 @@ const CoinChangeInfo = ({ data, timeFrame }) => {
           $
           {marketChangePct}
         </p>
-        <img src={marketImg} alt="market indicator" />
+        <img className="indicator" src={marketImg} alt="market indicator" />
       </div>
     </section>
   );

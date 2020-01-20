@@ -25,26 +25,30 @@ export const CoinInfo = (props) => {
           Rank: #
           {coin.rank}
         </p>
-        <p className="coin-main">{coin.id}</p>
       </div>
       <div id="coin-market-info">
         <p className="coin-p">
-          Price: $
+          <span>Price:</span>
+          $
           {price}
         </p>
         <p className="coin-p">
-          Market Cap: $
+          <span>Market Cap:</span>
+          $
           {coin.market_cap}
         </p>
         <p className="coin-p">
-          High: $
+          <span>High:</span>
+          $
           {high}
         </p>
         <p className="coin-p">
-          Circulating Supply: {coin.circulating_supply}
+          <span>Circulating Supply:</span>
+          {coin.circulating_supply}
         </p>
         <p className="coin-p">
-          Max Supply: {coin.max_supply}
+          <span>Max Supply:</span>
+          {coin.max_supply}
         </p>
       </div>
       <CoinChangeInfo data={timeFrameData} timeFrame={props.timeFrame}/>
