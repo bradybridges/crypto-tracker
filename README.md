@@ -41,7 +41,7 @@ npm install
 
 ## Screenshots
 ![Home](https://github.com/bradybridges/crypto-tracker/blob/master/src/Images/home.png)
-![Coin Info](https://github.com/bradybridges/crypto-tracker/blob/master/src/Images/coininfo.png)
+![Coin Info](https://user-images.githubusercontent.com/25031031/72751082-cfb54100-3b7b-11ea-8578-8485de9f2603.png)
 ![Portfolio](https://github.com/bradybridges/crypto-tracker/blob/master/src/Images/portfolio.png)
 ![Portfolio Info](https://github.com/bradybridges/crypto-tracker/blob/master/src/Images/portfoliovalue.png)
 ![Search](https://github.com/bradybridges/crypto-tracker/blob/master/src/Images/search.png)
