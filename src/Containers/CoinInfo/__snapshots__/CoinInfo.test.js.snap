@@ -33,11 +33,6 @@ exports[`CoinInfo should match the snapshot 1`] = `
       Rank: #
       1
     </p>
-    <p
-      className="coin-main"
-    >
-      BTC
-    </p>
   </div>
   <div
     id="coin-market-info"
@@ -45,31 +40,44 @@ exports[`CoinInfo should match the snapshot 1`] = `
     <p
       className="coin-p"
     >
-      Price: $
+      <span>
+        Price:
+      </span>
+      $
       9393.23
     </p>
     <p
       className="coin-p"
     >
-      Market Cap: $
+      <span>
+        Market Cap:
+      </span>
+      $
       234453454.34
     </p>
     <p
       className="coin-p"
     >
-      High: $
+      <span>
+        High:
+      </span>
+      $
       19567.43
     </p>
     <p
       className="coin-p"
     >
-      Circulating Supply: 
+      <span>
+        Circulating Supply:
+      </span>
       12314534
     </p>
     <p
       className="coin-p"
     >
-      Max Supply: 
+      <span>
+        Max Supply:
+      </span>
       200000000
     </p>
   </div>

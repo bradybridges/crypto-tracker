@@ -24,6 +24,7 @@ exports[`CoinChangeInfo should match the snapshot 1`] = `
     </p>
     <img
       alt="price indicator"
+      className="indicator"
       src="up-arrow.png"
     />
   </div>
@@ -42,6 +43,7 @@ exports[`CoinChangeInfo should match the snapshot 1`] = `
     </p>
     <img
       alt="volume indicator"
+      className="indicator"
       src="up-arrow.png"
     />
   </div>
@@ -61,6 +63,7 @@ exports[`CoinChangeInfo should match the snapshot 1`] = `
     </p>
     <img
       alt="market indicator"
+      className="indicator"
       src="down-arrow.png"
     />
   </div>

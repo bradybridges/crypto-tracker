@@ -5,8 +5,12 @@ p {
 
 .coin-p {
   width: 90%;
-  text-align: center;
-  margin: 10px;
+  margin: 5px;
+  padding: 10px;
+  background-color: #3e3e3ed4;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #coin-info-container {
@@ -34,10 +38,16 @@ p {
 }
 
 #coin-rank-info {
-  width: 50%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.coin-main {
+  font-size: 1.5em;
+  margin: 0;
+  font-weight: bold;
 }
 
 #coin-market-info {
