@@ -44,9 +44,11 @@ export class App extends Component {
   }
 
   handleCryptoRefresh = () => {
+    const { cryptos } = this.props;
+    const symbols = cryptos.map((coin) => coin.id);
     setInterval(() => {
-      this.getCryptos();
-    }, 60000);
+      this.getCryptos(symbols);
+    }, 6000);
   }
 
   render() {
