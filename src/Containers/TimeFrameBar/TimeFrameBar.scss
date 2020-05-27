@@ -14,9 +14,18 @@
 .active {
   background-color: black;
   color: white;
-  width: 25%,
+  width: 25%;
 }
 
 .inactive {
   width: 25%;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+td {
+  &:hover {
+    cursor: default;
+  }
 }
